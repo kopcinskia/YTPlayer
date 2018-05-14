@@ -1,27 +1,38 @@
 import { connect } from 'react-redux'
-import { toggleListItem } from '../actions'
+import { toggleListItem, visibilityFilters} from '../actions'
 import VideoList from '../components/VideoList'
-import { visibilityFilters } from '../actions'
 
 const getVisibleVideoListItems = (videoListItems, filter) => {
   switch (filter) {
     case visibilityFilters.SHOW_ALL:
       return videoListItems;
     case visibilityFilters.SELECTED:
-      return videoListItems.filter(t => t.selected);
-    case visibilityFilters.UNSELECTED:
-      return console.log('tu Cię mam');
     default:
       throw new Error('Unknown filter: ' + filter);
   }
 };
 
+let currentItem;
+
+const getCurrentItem = (videoListItems) => {
+  videoListItems.map(itemList => {
+    if(itemList.selected) {
+      currentItem = {
+        currentName: itemList.name,
+        currentUrl: itemList.url
+      }
+    }
+  });
+  console.log(currentItem)
+};
+
 const mapStateToProps = state => ({
-  videoListItems: getVisibleVideoListItems(state.videoListItems, state.visibilityFilter)
+  videoListItems: getVisibleVideoListItems(state.videoListItems, state.visibilityFilter),
+  currentItem: getCurrentItem(state.videoListItems)
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleListItem: id => dispatch(toggleListItem(id))
+  toggleListItem: id => dispatch(toggleListItem(id)),
 });
 
 export default connect(

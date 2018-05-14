@@ -6,7 +6,7 @@ const Link = ({ active, children, onClick }) => (
     onClick={onClick}
     disabled={active}
     style={{
-      marginLeft: '4px',
+      marginLeft: '4444px', background: 'red',
     }}
   >
     {children}
@@ -20,3 +20,5 @@ Link.propTypes = {
 };
 
 export default Link;
+
+//DO Usunięcia

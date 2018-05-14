@@ -2,13 +2,12 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import PropTypes from 'prop-types'
 
-const Player = ({url, name}) => (
+const Player = ({name, url}) => (
       <ul>
         <li>{name}</li>
         <li>
           <ReactPlayer
           url={url}
-          playing
           controls
           />
         </li>

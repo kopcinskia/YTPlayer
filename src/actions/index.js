@@ -20,5 +20,10 @@ export const toggleListItem = id => ({
 export const visibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',
   SELECTED: 'SELECTED',
-  UNSELECTED: 'UNSELECTED'
 };
+
+// export const uploadVideo = (name, url) => ({
+//   type: 'UPLOAD_VIDEO',
+//   name,
+//   url,
+// });
