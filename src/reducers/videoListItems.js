@@ -16,13 +16,7 @@ const videoListItems = (state = [], action) => {
           ? {...itemList, selected: true}
           : {...itemList, selected: false}
       );
-    // case 'UPLOAD_VIDEO':
-    //   console.log('klik');
-    //   return state.map(itemList =>
-    //     (itemList.selected == true)
-    //     ? {...state, url: action.url, name:action.name}
-    //     : {}
-    //   );
+
     default:
       return state
   }

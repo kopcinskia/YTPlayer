@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import videoListItems from './videoListItems'
-import visibilityFilter from './visibilityFilter'
+import videoPlayer from './videoPlayer'
 
 export default combineReducers({
   videoListItems,
-  visibilityFilter,
+  videoPlayer,
 })

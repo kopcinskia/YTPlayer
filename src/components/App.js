@@ -1,7 +1,7 @@
 import React from 'react'
 import AddListItem from '../containers/AddListItem'
 import VisibleVideoList from '../containers/VisibleVideoList'
-import PlayerBar from '../components/Player'
+import PlayerBar from '../containers/PlayerBar'
 
 const App = () => (
   <div>

@@ -7,23 +7,13 @@ export const addListItem = (name, url) => ({
   url
 });
 
-export const setVisibilityFilter = filter => ({
-  type: 'SET_VISIBILITY_FILTER',
-  filter
-});
-
 export const toggleListItem = id => ({
   type: 'TOGGLE_ITEM_LIST',
   id
 });
 
-export const visibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
-  SELECTED: 'SELECTED',
-};
-
-// export const uploadVideo = (name, url) => ({
-//   type: 'UPLOAD_VIDEO',
-//   name,
-//   url,
-// });
+export const currentItem = (name, url) => ({
+  type: 'GET_CURRENT_ITEM',
+  name,
+  url,
+});

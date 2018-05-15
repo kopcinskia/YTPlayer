@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import VideoListItem from './VideoListItem'
 
-const VideoList = ({ videoListItems, toggleListItem, currentItem }) => (
+const VideoList = ({ videoListItems, toggleListItem }) => (
   <div>
     <table>
       <thead>
@@ -22,11 +22,9 @@ const VideoList = ({ videoListItems, toggleListItem, currentItem }) => (
             {...videoListItem}
             onClick={() => toggleListItem(videoListItem.id)}
           />
-
         )}
       </tbody>
     </table>
-    <button onClick={() => currentItem(videoListItems)}></button>
   </div>
 );
 
@@ -38,7 +36,6 @@ VideoList.propTypes = {
     url: PropTypes.string.isRequired,
   }).isRequired).isRequired,
   toggleListItem: PropTypes.func.isRequired,
-  currentIitem: PropTypes.func
 };
 
 export default VideoList
