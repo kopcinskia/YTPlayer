@@ -2,18 +2,19 @@ import { connect } from 'react-redux'
 import { currentItem } from '../actions'
 import Player from '../components/Player'
 
+//Do zmiany
 const getCurrentItem = (videoListItems) => {
   videoListItems.map(itemList => {
     if(itemList.selected) {
-      console.log(currentItem(itemList.name, itemList.url));
-      return currentItem(itemList.name, itemList.url)
+      let Item = (currentItem(itemList.name, itemList.url));
+      return Item;
     }
   });
 
 };
 
 const mapStateToProps = state => ({
-  videoPlayer: getCurrentItem(state.videoListItems),
+  videoPlayer: getCurrentItem(state.videoListItems, 'GET_CURRENT_ITEM'),
   videoListItems: state.videoListItems
 });
 

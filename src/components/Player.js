@@ -2,13 +2,15 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import PropTypes from 'prop-types'
 
+
+// Do zmiany
 const Player = ({ videoListItems, videoPlayer }) => {
 
   return (
   <ul>
-    <li>{videoPlayer.name}</li>
+    <li>{videoPlayer}</li>
     <li>{videoListItems.map(i =>
-    i.selected === true ? i.url : i.name)}</li>
+    i.selected === true ? console.log(videoPlayer) : i.url)}</li>
     <li>{'Default'}</li>
     <li>
       <ReactPlayer

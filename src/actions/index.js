@@ -12,6 +12,7 @@ export const toggleListItem = id => ({
   id
 });
 
+//Do zmiany
 export const currentItem = (name, url) => ({
   type: 'GET_CURRENT_ITEM',
   name,

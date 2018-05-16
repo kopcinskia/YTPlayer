@@ -1,4 +1,7 @@
-const videoPlayer = (state = [], action) => {
+import { currentItem } from '../actions/index'
+
+// Do zmiany
+const videoPlayer = (state = currentItem, action) => {
   switch (action.type) {
     case 'GET_CRRENT_ITEM':
       console.log('klik');
