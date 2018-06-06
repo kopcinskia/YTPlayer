@@ -1,10 +1,12 @@
 import { currentItem } from '../actions/index'
 
-// Do zmiany
+//TODO log się świeci nie ma żądanego efektu
+
 const videoPlayer = (state = currentItem, action) => {
+
   switch (action.type) {
-    case 'GET_CRRENT_ITEM':
-      console.log('klik');
+    case 'GET_CURRENT_ITEM':
+      console.log('klik2');
       return [
     ...state,
       {

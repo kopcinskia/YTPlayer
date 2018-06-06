@@ -5,6 +5,8 @@ import { Provider } from 'react-redux'
 import App from './components/App'
 import rootReducer from './reducers'
 
+//TODO zadbaj o poprawną inicjalizacje stanu ReduxDevtool go nie wykrywa
+
 const store = createStore(rootReducer);
 
 render(
