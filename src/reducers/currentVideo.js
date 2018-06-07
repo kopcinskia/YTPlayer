@@ -1,4 +1,4 @@
-const currentItem = (state = {}, action) => {
+const currentVideo = (state = {}, action) => {
 
   switch (action.type) {
     case 'GET_CURRENT_ITEM':
@@ -11,4 +11,4 @@ const currentItem = (state = {}, action) => {
   }
 };
 
-export default currentItem;
+export default currentVideo;

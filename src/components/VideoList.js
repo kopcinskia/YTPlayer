@@ -7,7 +7,7 @@ import VideoListItem from './VideoListItem'
 
 //TODO Śmietnik trzeba upożądkować
 
-const VideoList = ({ videoListItems, toggleListItem, getCurrentItem, currentItem}) => (
+const VideoList = ({ videoListItems, toggleListItem, getCurrentItem, currentVideo}) => (
   <div>
     <table>
       <thead>
@@ -31,7 +31,7 @@ const VideoList = ({ videoListItems, toggleListItem, getCurrentItem, currentItem
       </tbody>
     </table>
     <ReactPlayer
-      url={currentItem.url === undefined ? 'https://www.youtube.com/watch?v=ysz5S6PUM-U' : currentItem.url }
+      url={currentVideo.url}
       controls
     />
   </div>
@@ -47,7 +47,7 @@ VideoList.propTypes = {
   }).isRequired),
   toggleListItem: PropTypes.func.isRequired,
   getCurrentItem: PropTypes.func.isRequired,
-  currentItem: PropTypes.shape({
+  currentVideo: PropTypes.shape({
     name: PropTypes.string,
     url: PropTypes.string
   })

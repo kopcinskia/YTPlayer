@@ -4,7 +4,7 @@ import VideoList from '../components/VideoList'
 
 
 const mapStateToProps = state => ({
-  currentItem: state.currentItem,
+  currentVideo: state.currentVideo,
   videoListItems: state.videoListItems
 });
 
