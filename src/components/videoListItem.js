@@ -15,13 +15,13 @@ const VideoListItem = ({ onClick, selected, name, url }) => (
       {url}
     </th>
   </tr>
-)
+);
 
 VideoListItem.propTypes = {
   onClick: PropTypes.func.isRequired,
   selected: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired
-}
+};
 
 export default VideoListItem

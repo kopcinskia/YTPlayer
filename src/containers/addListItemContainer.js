@@ -28,6 +28,6 @@ const AddListItem = ({ dispatch }) => {
       </form>
     </div>
   )
-}
+};
 
 export default connect()(AddListItem)

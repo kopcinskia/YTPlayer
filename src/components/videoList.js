@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactPlayer from 'react-player'
 
-import VideoListItem from './VideoListItem'
+import VideoListItem from './videoListItem'
 
 
 //TODO Śmietnik trzeba upożądkować

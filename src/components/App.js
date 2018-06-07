@@ -1,6 +1,6 @@
 import React from 'react'
-import AddListItem from '../containers/AddListItem'
-import VisibleVideoList from '../containers/VisibleVideoList'
+import AddListItem from '../containers/addListItemContainer'
+import VisibleVideoList from '../containers/videoListContainer'
 
 const App = () => (
   <div>

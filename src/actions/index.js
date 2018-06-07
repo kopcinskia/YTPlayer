@@ -1,4 +1,4 @@
-let nextTodoId = 0;
+let nextTodoId = 10;
 
 export const addListItem = (name, url) => ({
   type: 'ADD_LIST_ITEM',
