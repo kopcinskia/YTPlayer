@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactPlayer from 'react-player'
 
 import VideoListItem from './videoListItem'
 
 
 //TODO Śmietnik trzeba upożądkować
 
-const VideoList = ({ videoListItems, toggleListItem, getCurrentItem, currentVideo}) => (
+const VideoList = ({ videoListItems, toggleListItem, getCurrentItem}) => (
   <div>
     <table>
       <thead>
@@ -30,10 +29,6 @@ const VideoList = ({ videoListItems, toggleListItem, getCurrentItem, currentVide
         )}
       </tbody>
     </table>
-    <ReactPlayer
-      url={currentVideo.url}
-      controls
-    />
   </div>
 
 );
@@ -47,10 +42,6 @@ VideoList.propTypes = {
   }).isRequired),
   toggleListItem: PropTypes.func.isRequired,
   getCurrentItem: PropTypes.func.isRequired,
-  currentVideo: PropTypes.shape({
-    name: PropTypes.string,
-    url: PropTypes.string
-  })
 };
 
 

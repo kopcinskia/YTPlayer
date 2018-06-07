@@ -1,3 +1,26 @@
-/**
- * Created by adrian on 07.06.18.
- */
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactPlayer from 'react-player'
+
+//TODO Śmietnik trzeba upożądkować
+
+const Player = ({currentVideo}) => (
+  <div>
+    <ReactPlayer
+      url={currentVideo.url}
+      controls
+    />
+  </div>
+
+);
+
+Player.propTypes = {
+  currentVideo: PropTypes.shape({
+    name: PropTypes.string,
+    url: PropTypes.string
+  })
+};
+
+
+
+export default Player

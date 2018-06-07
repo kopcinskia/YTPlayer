@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addListItem } from '../actions'
+import { addListItem } from '../actions/videoListActions'
 
 //TODO Lepsza walicacja
 
