@@ -3,9 +3,6 @@ import PropTypes from 'prop-types'
 
 import VideoListItem from './videoListItem'
 
-
-//TODO Śmietnik trzeba upożądkować
-
 const VideoList = ({ videoListItems, toggleListItem, getCurrentItem}) => (
   <div>
     <table>
