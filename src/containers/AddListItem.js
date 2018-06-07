@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addListItem } from '../actions'
 
+//TODO Lepsza walicacja
+
 const AddListItem = ({ dispatch }) => {
   let name;
   let url;
@@ -10,6 +12,7 @@ const AddListItem = ({ dispatch }) => {
     <div>
       <form onSubmit={e => {
         e.preventDefault();
+        //walidacja
         if (!name.value.trim() || !url.value.trim()) {
           return
         }

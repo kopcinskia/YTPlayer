@@ -1,16 +1,16 @@
 import { connect } from 'react-redux'
-import { toggleListItem, currentItem } from '../actions'
+import { toggleListItem, getCurrentItem } from '../actions'
 import VideoList from '../components/VideoList'
 
 
 const mapStateToProps = state => ({
-
+  currentItem: state.currentItem,
   videoListItems: state.videoListItems
 });
 
 const mapDispatchToProps = dispatch => ({
   toggleListItem: id => dispatch(toggleListItem(id)),
-  currentItem: (name, url) => dispatch(currentItem(name,url)),
+  getCurrentItem: (id, name, url) => dispatch(getCurrentItem(id, name, url)),
 });
 
 export default connect(

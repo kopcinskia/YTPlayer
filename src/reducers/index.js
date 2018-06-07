@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
 import videoListItems from './videoListItems'
-import videoPlayer from './videoPlayer'
+import currentItem from './currentItem'
+
 
 export default combineReducers({
   videoListItems,
-  videoPlayer,
+  currentItem,
 })

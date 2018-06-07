@@ -7,7 +7,7 @@ import VideoListItem from './VideoListItem'
 
 //TODO Śmietnik trzeba upożądkować
 
-const VideoList = ({ videoListItems, toggleListItem, currentItem, videoPlayer }) => (
+const VideoList = ({ videoListItems, toggleListItem, getCurrentItem, currentItem}) => (
   <div>
     <table>
       <thead>
@@ -25,24 +25,17 @@ const VideoList = ({ videoListItems, toggleListItem, currentItem, videoPlayer })
           <VideoListItem
             key={videoListItem.id}
             {...videoListItem}
-            onClick={() => {toggleListItem(videoListItem.id); currentItem(videoListItem.name, videoListItem.url)}}
+            onClick={() => {toggleListItem(videoListItem.id); getCurrentItem(videoListItem.name, videoListItem.url)}}
           />
         )}
       </tbody>
     </table>
-    <ul>
-      <li>{videoPlayer}</li>
-      <li>{videoListItems.map(i =>
-        i.selected === true ? console.log(videoPlayer) : i.url)}</li>
-      <li>{'Default'}</li>
-      <li>
-        <ReactPlayer
-          url={'https://www.youtube.com/watch?v=ysz5S6PUM-U'}
-          controls
-        />
-      </li>
-    </ul>
+    <ReactPlayer
+      url={currentItem.url === undefined ? 'https://www.youtube.com/watch?v=ysz5S6PUM-U' : currentItem.url }
+      controls
+    />
   </div>
+
 );
 
 VideoList.propTypes = {
@@ -51,14 +44,15 @@ VideoList.propTypes = {
     selected: PropTypes.bool.isRequired,
     name: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-  }).isRequired).isRequired,
+  }).isRequired),
   toggleListItem: PropTypes.func.isRequired,
-  currentItem: PropTypes.func.isRequired,
-
-  videoPlayer: PropTypes.objectOf(PropTypes.shape({
+  getCurrentItem: PropTypes.func.isRequired,
+  currentItem: PropTypes.shape({
     name: PropTypes.string,
     url: PropTypes.string
-  }))
+  })
 };
+
+
 
 export default VideoList
