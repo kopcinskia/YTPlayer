@@ -2,21 +2,25 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addListItem } from '../actions/videoListActions'
 
-//TODO Lepsza walicacja
-
 const AddListItem = ({ dispatch }) => {
   let name;
   let url;
+  const regYtLink = /^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/(watch\?v=).+/;
+
+  //TODO ulepsz walidację
 
   return (
     <div>
       <form onSubmit={e => {
         e.preventDefault();
-        //walidacja
-        if (!name.value.trim() || !url.value.trim()) {
-          return
+        if (name.value.trim() && regYtLink.test(url.value))  {
+          dispatch(addListItem(name.value, url.value));
+        } else {
+
+          //TODO ulepsz walidację
+
+          alert('Wpisz poprawne dane w formularzu')
         }
-        dispatch(addListItem(name.value, url.value));
         name.value = '';
         url.value = '';
       }}>
