@@ -6,6 +6,7 @@ import Player from '../containers/playerContainer'
 let search = require('youtube-search');
 
 const opts = {
+  //TODO !!!!!!!!!!!!!!!!@@@@@@@@@@@!!!!!!!!!!!!!!!!
   // querrySearch zmień na zmienną + input do zmiennej
   // stwórz kolejny stan listy na wzór swojej listy która będzie wyciągała potrzebnego Ci Jsona razem z Urlami obrazków
   // Obrazki będą bardzo głębokim komponentem w drzecie Itemka w liście
