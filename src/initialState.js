@@ -23,31 +23,31 @@ export const seveState = (state) => {
 const defaultState = {
   videoListItems: [
     {
-      id: 0,
+      id: '0',
       name: 'Two Feet - Go Fuck Yourself',
       url: 'https://www.youtube.com/watch?v=SEptMnVlsJY',
       selected: false,
     },
     {
-      id: 1,
+      id: '1',
       name: 'PatFlynn',
       url: 'https://www.youtube.com/watch?v=CdXEkHJhiVM',
       selected: false,
     },
     {
-      id: 2,
+      id: '2',
       name: 'SimpleProgrammer',
       url: 'https://www.youtube.com/watch?v=AczzKgTeR2A',
       selected: false,
     },
     {
-      id: 3,
+      id: '3',
       name: 'MiroBurn',
       url: 'https://www.youtube.com/watch?v=cMXd01u8Zmg',
       selected: false,
     },
     {
-      id: 4,
+      id: '4',
       name: 'Chilled Serenity',
       url: 'https://www.youtube.com/watch?v=ysz5S6PUM-U',
       selected: false,

@@ -32,7 +32,7 @@ const VideoList = ({ videoListItems, toggleListItem, getCurrentItem}) => (
 
 VideoList.propTypes = {
   videoListItems: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     selected: PropTypes.bool.isRequired,
     name: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,

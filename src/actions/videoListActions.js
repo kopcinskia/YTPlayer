@@ -1,8 +1,8 @@
-let nextTodoId = 10;
+import { v4 } from 'node-uuid'
 
 export const addListItem = (name, url) => ({
   type: 'ADD_LIST_ITEM',
-  id: nextTodoId++,
+  id: v4().toString(),
   name,
   url
 });
