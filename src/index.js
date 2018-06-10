@@ -7,11 +7,13 @@ import { combineReducers } from 'redux'
 import App from './components/App'
 import videoListItems from './reducers/videoListItems'
 import currentVideo from './reducers/currentVideo'
+import searchVideos from './reducers/searchVideos'
 import initialState, { seveState } from './initialState'
 
 const rootReducer = combineReducers({
   videoListItems: videoListItems,
   currentVideo: currentVideo,
+  searchVideos: searchVideos,
 });
 
 const store = createStore(
@@ -23,7 +25,8 @@ const store = createStore(
 store.subscribe(() => {
   seveState({
     videoListItems: store.getState().videoListItems,
-      currentVideo: store.getState().currentVideo
+    currentVideo: store.getState().currentVideo,
+    // searchVideos: store.getState().searchVideos
   });
 });
 

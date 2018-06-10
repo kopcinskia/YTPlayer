@@ -17,3 +17,8 @@ export const getCurrentItem = (name, url) => ({
   name,
   url,
 });
+
+export const searchVideos = (search) => ({
+  type: 'SEARCH_VIDEOS',
+  search
+});

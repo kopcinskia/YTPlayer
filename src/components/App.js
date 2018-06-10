@@ -2,6 +2,7 @@ import React from 'react'
 import AddListItem from '../containers/addListItemContainer'
 import VisibleVideoList from '../containers/videoListContainer'
 import Player from '../containers/playerContainer'
+import SearchVideos from '../containers/searchVideoContainer'
 
 let search = require('youtube-search');
 
@@ -13,9 +14,12 @@ const opts = {
   // Itemek powinien posiadać {
   // ---Obrazek
   // ---Tytuł
+
   // ---Przycisk Dodaj do listy
   // ---Validację
+  //
   // ---ToolTipkek
+
   //         EWETUALNIE
   // ---Channel Title
   // ---Chanel Id z linkiem na kanał
@@ -37,6 +41,7 @@ const App = () => (
   <div>
     <AddListItem />
     <VisibleVideoList />
+    <SearchVideos />
     <Player />
   </div>
 );

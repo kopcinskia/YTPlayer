@@ -19,7 +19,7 @@ const AddListItem = ({ dispatch }) => {
 
           //TODO ulepsz walidację
 
-          alert('Wpisz poprawne dane w formularzu')
+          alert('Wpisz poprawne dane w formularzu ADD ITEM!!!!')
         }
         name.value = '';
         url.value = '';

@@ -57,6 +57,9 @@ const defaultState = {
   currentVideo: {
     name: 'AAAAAAAAAAAaaa',
     url: 'https://www.youtube.com/watch?v=ysz5S6PUM-U'
+  },
+  searchVideos: {
+      search: 'search',
   }
 };
 
