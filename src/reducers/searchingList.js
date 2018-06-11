@@ -1,4 +1,4 @@
-const searchingList = (state = {}, action) => {
+const searchingList = (state = [], action) => {
   switch (action.type) {
     case 'CREATING_SEARCHING_LIST':
 
