@@ -10,13 +10,16 @@ const SearchingList = ({ searchingList }) => {
         <thead>
         <tr>
           <th>
-            Name:
+            Tytuł:
           </th>
           <th>
-            URL:
+            Link:
           </th>
           <th>
-            COŚTAM:
+            Opis:
+          </th>
+          <th>
+            Obrazek:
           </th>
         </tr>
         </thead>

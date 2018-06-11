@@ -13,7 +13,7 @@ const SearchListItem = ({ link, title, description, thumbnails }) => (
       {description}
     </th>
     <th>
-      {thumbnails}
+      <img src={thumbnails} alt="brzydkie obrazki"/>
     </th>
   </tr>
 );
@@ -22,7 +22,7 @@ SearchListItem.propTypes = {
   link: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
-  thumbnails: PropTypes.shape
+  thumbnails: PropTypes.string,
 };
 
 export default SearchListItem

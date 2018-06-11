@@ -1,6 +1,6 @@
 const searchingList = (state = [], action) => {
   switch (action.type) {
-    case 'CREATING_SEARCHING_LIST':
+      case 'CREATING_SEARCHING_LIST':
 
       return(
         action.array.map(seatchItem => ({
@@ -8,6 +8,7 @@ const searchingList = (state = [], action) => {
           link: seatchItem.link,
           title: seatchItem.title,
           description: seatchItem.description,
+          thumbnails: seatchItem.thumbnails.default.url,
         })));
     default:
       return state;

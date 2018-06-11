@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { toggleListItem, getCurrentItem } from '../actions/videoListActions'
-import VideoList from '../components/videoList'
+import VideoList from '../components/favourites/videoList'
 
 
 const mapStateToProps = state => ({

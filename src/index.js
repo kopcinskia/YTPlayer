@@ -7,14 +7,12 @@ import { combineReducers } from 'redux'
 import App from './components/App'
 import videoListItems from './reducers/videoListItems'
 import currentVideo from './reducers/currentVideo'
-import searchVideos from './reducers/searchVideos'
 import searchingList from './reducers/searchingList'
 import initialState, { seveState } from './initialState'
 
 const rootReducer = combineReducers({
   videoListItems: videoListItems,
   currentVideo: currentVideo,
-  searchVideos: searchVideos,
   searchingList: searchingList,
 
 });
