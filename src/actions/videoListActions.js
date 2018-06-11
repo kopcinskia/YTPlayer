@@ -17,8 +17,3 @@ export const getCurrentItem = (name, url) => ({
   name,
   url,
 });
-
-export const getSearchedObject = (search) => ({
-  type: 'GET_SEARCHED_OBJECT',
-  search
-});
