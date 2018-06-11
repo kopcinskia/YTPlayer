@@ -18,7 +18,7 @@ export const getCurrentItem = (name, url) => ({
   url,
 });
 
-export const searchVideos = (search) => ({
-  type: 'SEARCH_VIDEOS',
+export const getSearchedObject = (search) => ({
+  type: 'GET_SEARCHED_OBJECT',
   search
 });

@@ -1,37 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const SearchVideos = ({ searchVideos, searchVideoItem }) => {
-  const search = require('youtube-search');
-  const opts =  {
-    //TODO !!!!!!!!!!!!!!!!@@@@@@@@@@@!!!!!!!!!!!!!!!!
-    // stwórz kolejny stan listy na wzór swojej listy która będzie wyciągała potrzebnego Ci Jsona razem z Urlami obrazków
-    // Obrazki będą bardzo głębokim komponentem w drzecie Itemka w liście
-    // Itemek powinien posiadać {
-    // ---Obrazek
-    // ---Tytuł
+const search = require('youtube-search');
+const opts =  {
+  //TODO !!!!!!!!!!!!!!!!@@@@@@@@@@@!!!!!!!!!!!!!!!!
+  // stwórz kolejny stan listy na wzór swojej listy która będzie wyciągała potrzebnego Ci Jsona razem z Urlami obrazków
+  // Obrazki będą bardzo głębokim komponentem w drzecie Itemka w liście
+  // Itemek powinien posiadać {
+  // ---Obrazek
+  // ---Tytuł
 
-    // ---Przycisk Dodaj do listy
-    // ---Validację
-    //
-    // ---ToolTipkek
+  // ---Przycisk Dodaj do listy
+  // ---Validację
+  //
+  // ---ToolTipkek
 
-    //         EWETUALNIE
-    // ---Channel Title
-    // ---Chanel Id z linkiem na kanał
-    // ---Link do Youtuba
-    // }
-    maxResults: 50,
-    key: 'AIzaSyCNSPr_DNFZasLvR_ygqeieKYwlbuh5GCw'
-  };
+  //         EWETUALNIE
+  // ---Channel Title
+  // ---Chanel Id z linkiem na kanał
+  // ---Link do Youtuba
+  // }
+  maxResults: 50,
+  key: 'AIzaSyCNSPr_DNFZasLvR_ygqeieKYwlbuh5GCw'
+};
 
+
+const SearchVideos = ({ getSearchedObject, searchedObject }) => {
   let searchInput;
+
   return (
     <div>
       <form onSubmit={e => {
         e.preventDefault();
         if (searchInput.value.trim())  {
-          searchVideos(searchInput.value);
+          getSearchedObject(searchInput.value);
         } else {
 
           //TODO ulepsz walidację
@@ -45,14 +47,14 @@ const SearchVideos = ({ searchVideos, searchVideoItem }) => {
         </button>
       </form>
       <div>
-        {searchVideoItem.search}
+        {searchedObject.search}
       </div>
       <div>
         {
           //TODO
           //Wywal to w reducer i stwórz state dla wyników wyszukiwania
 
-          search(searchVideoItem.search, opts, function(err, results) {
+          search(searchedObject.search, opts, function(err, results) {
             if(err) return console.error(err, 'Search list ERR!!');
 
             console.dir(results);
@@ -64,10 +66,10 @@ const SearchVideos = ({ searchVideos, searchVideoItem }) => {
 };
 
 SearchVideos.propTypes = {
-  searchVideoItem: PropTypes.shape({
+  searchedObject: PropTypes.shape({
     search: PropTypes.string,
   }),
-  searchVideos: PropTypes.func,
+  getSearchedObject: PropTypes.func,
 };
 
 export default SearchVideos;

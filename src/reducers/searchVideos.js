@@ -1,6 +1,6 @@
 const searchVideos = (state = {}, action) => {
     switch (action.type) {
-        case 'SEARCH_VIDEOS':
+        case 'GET_SEARCHED_OBJECT':
             return {
                 search: action.search,
             };
