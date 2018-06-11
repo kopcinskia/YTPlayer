@@ -1,29 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { searchVideos } from '../actions/videoListActions'
+import SearchVideos from '../components/searchVideos'
 
-const SearchVideos = ({ dispatch }) => {
-  let search;
-  return (
-    <div>
-      <form onSubmit={e => {
-        e.preventDefault();
-        if (search.value.trim())  {
-          dispatch(searchVideos(search.value));
-        } else {
 
-            //TODO ulepsz walidację
+const mapStateToProps = state => ({
+  searchVideoItem: state.searchVideos,
+});
 
-            alert('Wpisz poprawne dane w formularzu SEARCH!!!!')
-        }
-      }}>
-        <input ref={node => search = node} />
-        <button type="submit">
-          Search
-        </button>
-      </form>
-    </div>
-  )
-};
+const mapDispatchToProps = dispatch => ({
+  searchVideos: search => dispatch(searchVideos(search)),
+});
 
-export default connect()(SearchVideos)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchVideos)

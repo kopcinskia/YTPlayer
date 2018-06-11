@@ -2,8 +2,7 @@ import { connect } from 'react-redux'
 import Player from '../components/player'
 
 const mapStateToProps = state => ({
-  currentVideo: state.currentVideo,
-  searchVideos: state.searchVideos,
+  currentVideo: state.currentVideo
 });
 
 const mapDispatchToProps = dispatch => ({
