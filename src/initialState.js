@@ -40,18 +40,6 @@ const defaultState = {
       url: 'https://www.youtube.com/watch?v=AczzKgTeR2A',
       selected: false,
     },
-    {
-      id: '3',
-      name: 'MiroBurn',
-      url: 'https://www.youtube.com/watch?v=cMXd01u8Zmg',
-      selected: false,
-    },
-    {
-      id: '4',
-      name: 'Chilled Serenity',
-      url: 'https://www.youtube.com/watch?v=ysz5S6PUM-U',
-      selected: false,
-    },
   ],
 
   currentVideo: {

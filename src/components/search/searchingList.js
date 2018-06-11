@@ -5,34 +5,15 @@ import SearchListItem from './searchListItem'
 
 const SearchingList = ({ searchingList }) => {
   return (
-    <div>
-      <table>
-        <thead>
-        <tr>
-          <th>
-            Tytuł:
-          </th>
-          <th>
-            Link:
-          </th>
-          <th>
-            Opis:
-          </th>
-          <th>
-            Obrazek:
-          </th>
-        </tr>
-        </thead>
-        <tbody>
-        {searchingList.map(searchingListItem =>
+    <ul>
+      {searchingList.map(searchingListItem =>
+        <li key={searchingListItem.id}>
           <SearchListItem
-            key={searchingListItem.id}
             {...searchingListItem}
           />
-        )}
-        </tbody>
-      </table>
-    </div>
+        </li>
+      )}
+    </ul>
   )
 
 };

@@ -1,14 +1,21 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { combineReducers } from 'redux'
-
 import App from './components/App'
+
 import videoListItems from './reducers/videoListItems'
 import currentVideo from './reducers/currentVideo'
 import searchingList from './reducers/searchingList'
 import initialState, { seveState } from './initialState'
+
+require('bootstrap/dist/css/bootstrap.min.css');
+require('./main.css');
+
+//TODO nie ma sensu zamieniać bootstrapa na coś innego
+// ogarnij własne csski
+// + pre processor SASS
 
 const rootReducer = combineReducers({
   videoListItems: videoListItems,
@@ -30,7 +37,7 @@ store.subscribe(() => {
   });
 });
 
-render(
+ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
