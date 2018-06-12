@@ -1,5 +1,6 @@
 import React from 'react'
-import { FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap'
 
 
 class Form extends React.Component {
@@ -12,6 +13,8 @@ class Form extends React.Component {
       value: ''
     };
   }
+
+  //TODO popraw walidację
 
   getValidationState() {
     const length = this.state.value.length;
@@ -29,22 +32,32 @@ class Form extends React.Component {
     return (
       <form>
         <FormGroup
-          controlId="formBasicText"
+          controlId={ this.props.id }
           validationState={this.getValidationState()}
         >
-          <ControlLabel>Working example with validation</ControlLabel>
+          <ControlLabel>{ this.props.label }</ControlLabel>
           <FormControl
-            type="text"
+            inputRef={ this.props.inputRef }
+            type={ this.props.type }
             value={this.state.value}
-            placeholder="Enter text"
+            placeholder={ this.props.placeholder }
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
+          <HelpBlock>{ this.props.helper }</HelpBlock>
         </FormGroup>
       </form>
     );
   }
 }
+
+Form.propTypes = {
+  id: PropTypes.string,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  helper: PropTypes.string,
+  type: PropTypes.string,
+  inputRef: PropTypes.func,
+};
 
 export default Form;

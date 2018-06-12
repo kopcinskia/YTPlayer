@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Form from '../forms'
+import { Button, Grid, Row, Col } from 'react-bootstrap'
 
 const search = require('youtube-search');
 const opts =  {
@@ -29,10 +31,25 @@ const SearchVideosInput = ({ createSearchingList }) => {
       }
       searchInput.value = '';
     }}>
-      <input ref={node => searchInput = node} />
-      <button type="submit">
-        Search
-      </button>
+        <Grid>
+          <Row>
+            <Col sm={12} md={10} >
+              <Form
+                inputRef={ node => searchInput = node }
+                id='aaa'
+                helper='Search on YT'
+                placeholder='Enter text'
+                label='Search Video: '
+                type='text'
+              />
+            </Col>
+            <Col sm={12} md={2}>
+              <Button bsSize='large' type="submit">
+                Search
+              </Button>
+            </Col>
+          </Row>
+        </Grid>
     </form>
   )
 };
