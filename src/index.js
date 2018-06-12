@@ -10,6 +10,7 @@ import currentVideo from './reducers/currentVideo'
 import searchingList from './reducers/searchingList'
 import initialState, { seveState } from './initialState'
 
+require('react-bootstrap')
 require('bootstrap/dist/css/bootstrap.min.css');
 require('./main.css');
 

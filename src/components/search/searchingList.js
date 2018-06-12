@@ -2,18 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import SearchListItem from './searchListItem'
+import { ListGroup, ListGroupItem } from 'react-bootstrap'
 
 const SearchingList = ({ searchingList }) => {
   return (
-    <ul>
+    <ListGroup>
+
       {searchingList.map(searchingListItem =>
-        <li key={searchingListItem.id}>
+        <ListGroupItem key={searchingListItem.id}>
           <SearchListItem
             {...searchingListItem}
           />
-        </li>
+        </ListGroupItem>
       )}
-    </ul>
+    </ListGroup>
   )
 
 };

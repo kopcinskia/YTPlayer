@@ -11,30 +11,29 @@ const SearchVideosInput = ({ createSearchingList }) => {
   let searchInput;
 
   return (
-    <div>
-      <form onSubmit={e => {
-        e.preventDefault();
-        if (searchInput.value.trim())  {
+    <form onSubmit={e => {
+      e.preventDefault();
+      if (searchInput.value.trim())  {
 
-          search(searchInput.value, opts, function (err, results) {
+        search(searchInput.value, opts, function (err, results) {
 
-            if (err) return console.error(err, 'Search list ERR!!');
-            createSearchingList(results);
-          })
-        } else {
+          if (err) return console.error(err, 'Search list ERR!!');
+          createSearchingList(results);
+        })
+      } else {
 
-          //TODO ulepsz walidację
+        //TODO ulepsz walidację
+        //przykład validacji -> https://github.com/Remchi/reddice/blob/master/client/components/login/LoginForm.js
 
-          alert('Wpisz poprawne dane w formularzu SEARCH!!!!')
-        }
-        searchInput.value = '';
-      }}>
-        <input ref={node => searchInput = node} />
-        <button type="submit">
-          Search
-        </button>
-      </form>
-    </div>
+        alert('Wpisz poprawne dane w formularzu SEARCH!!!!')
+      }
+      searchInput.value = '';
+    }}>
+      <input ref={node => searchInput = node} />
+      <button type="submit">
+        Search
+      </button>
+    </form>
   )
 };
 

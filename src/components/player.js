@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactPlayer from 'react-player'
+import { Grid } from 'react-bootstrap'
 
 //TODO kontrolki i opcje do playera np wyciemniane (MODAL)
 const Player = ({currentVideo}) => (
-  <div>
+  <Grid>
     <ReactPlayer
       url={currentVideo.url}
       controls
     />
-  </div>
+  </Grid>
 
 );
 
