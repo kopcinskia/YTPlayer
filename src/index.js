@@ -10,7 +10,7 @@ import currentVideo from './reducers/currentVideo'
 import searchingList from './reducers/searchingList'
 import initialState, { seveState } from './initialState'
 
-require('react-bootstrap')
+require('react-bootstrap');
 require('bootstrap/dist/css/bootstrap.min.css');
 require('./main.css');
 
@@ -18,6 +18,8 @@ require('./main.css');
 // ogarnij własne csski
 // + pre processor SASS
 
+
+//zagnieżdżony stan !!! https://github.com/reduxjs/redux/blob/master/docs/recipes/reducers/ImmutableUpdatePatterns.md
 const rootReducer = combineReducers({
   videoListItems: videoListItems,
   currentVideo: currentVideo,
