@@ -30,23 +30,21 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form>
-        <FormGroup
-          controlId={ this.props.id }
-          validationState={this.getValidationState()}
-        >
-          <ControlLabel>{ this.props.label }</ControlLabel>
-          <FormControl
-            inputRef={ this.props.inputRef }
-            type={ this.props.type }
-            value={this.state.value}
-            placeholder={ this.props.placeholder }
-            onChange={this.handleChange}
-          />
-          <FormControl.Feedback />
-          <HelpBlock>{ this.props.helper }</HelpBlock>
-        </FormGroup>
-      </form>
+      <FormGroup
+        controlId={ this.props.id }
+        validationState={this.getValidationState()}
+      >
+        <ControlLabel>{ this.props.label }</ControlLabel>
+        <FormControl
+          inputRef={ this.props.inputRef }
+          type={ this.props.type }
+          value={this.state.value}
+          placeholder={ this.props.placeholder }
+          onChange={this.handleChange}
+        />
+        <FormControl.Feedback />
+        <HelpBlock>{ this.props.helper }</HelpBlock>
+      </FormGroup>
     );
   }
 }

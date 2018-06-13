@@ -5,6 +5,7 @@ import SearchingInput from './searchingInput'
 import SearchingList from './searchingList'
 
 //TODO ogarnij:
+// walidacja pustej tablicy z YT albo default + walidacja
 // przewijane menu ze csrollem
 // stałą szerokość dla itemków
 // background
