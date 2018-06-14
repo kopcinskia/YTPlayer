@@ -21,7 +21,11 @@ require('./main.css');
 
 //zagnieżdżony stan !!! https://github.com/reduxjs/redux/blob/master/docs/recipes/reducers/ImmutableUpdatePatterns.md
 const rootReducer = combineReducers({
-  videoListItems: videoListItems,
+  favourites: combineReducers({
+    videoListItems: videoListItems,
+    currentVideo: currentVideo
+  }),
+  // videoListItems: favourites,
   currentVideo: currentVideo,
   searchingList: searchingList,
 
@@ -35,7 +39,7 @@ const store = createStore(
 
 store.subscribe(() => {
   seveState({
-    videoListItems: store.getState().videoListItems,
+    favourites: store.getState().favourites,
     currentVideo: store.getState().currentVideo,
   });
 });

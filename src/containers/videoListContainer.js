@@ -4,7 +4,8 @@ import VideoList from '../components/favourites/videoList'
 
 
 const mapStateToProps = state => ({
-  videoListItems: state.videoListItems
+  videoListItems: state.favourites.videoListItems
+
 });
 
 const mapDispatchToProps = dispatch => ({

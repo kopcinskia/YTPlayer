@@ -21,34 +21,38 @@ export const seveState = (state) => {
 };
 
 const defaultState = {
-  videoListItems: [
-    {
-      id: '0',
-      name: 'Two Feet - Go Fuck Yourself',
-      url: 'https://www.youtube.com/watch?v=SEptMnVlsJY',
-      selected: false,
+  favourites: {
+    videoListItems: [
+      {
+        id: '0',
+        name: 'Two Feet - Go Fuck Yourself',
+        url: 'https://www.youtube.com/watch?v=SEptMnVlsJY',
+        selected: false,
+      },
+      {
+        id: '1',
+        name: 'PatFlynn',
+        url: 'https://www.youtube.com/watch?v=CdXEkHJhiVM',
+        selected: false,
+      },
+      {
+        id: '2',
+        name: 'SimpleProgrammer',
+        url: 'https://www.youtube.com/watch?v=AczzKgTeR2A',
+        selected: false,
+      },
+    ],
+    currentVideo: {
+      name: 'AAAAAAAAAAAaaa',
+      url: 'https://www.youtube.com/watch?v=ysz5S6PUM-U'
     },
-    {
-      id: '1',
-      name: 'PatFlynn',
-      url: 'https://www.youtube.com/watch?v=CdXEkHJhiVM',
-      selected: false,
-    },
-    {
-      id: '2',
-      name: 'SimpleProgrammer',
-      url: 'https://www.youtube.com/watch?v=AczzKgTeR2A',
-      selected: false,
-    },
-  ],
 
+  },
+// Tymczasowo
   currentVideo: {
     name: 'AAAAAAAAAAAaaa',
     url: 'https://www.youtube.com/watch?v=ysz5S6PUM-U'
   },
-  searchVideos: {
-      search: 'search',
-  }
 };
 
 export default initialState;
