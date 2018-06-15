@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import ListItem from './listItem'
 import { ListGroup, ListGroupItem } from 'react-bootstrap'
 
-const DefaultList = ({ defaultList }) => {
+const DefaultList = ({ defaultList, toggleListItem, getCurrentItem}) => {
   return (
     <ListGroup>
 
@@ -12,6 +12,7 @@ const DefaultList = ({ defaultList }) => {
         <ListGroupItem key={searchingListItem.id}>
           <ListItem
             {...searchingListItem}
+            onClick={() => {toggleListItem(searchingListItem.id); getCurrentItem(searchingListItem.title, searchingListItem.link)}}
           />
         </ListGroupItem>
       )}
@@ -24,6 +25,8 @@ DefaultList.propTypes = {
   defaultList: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
   })).isRequired,
+    toggleListItem: PropTypes.func.isRequired,
+    getCurrentItem: PropTypes.func.isRequired,
 };
 
 export default DefaultList;

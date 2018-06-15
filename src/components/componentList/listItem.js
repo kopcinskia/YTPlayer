@@ -2,8 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Media } from 'react-bootstrap'
 
-const ListItem = ({ link, title, description, thumbnails, selected }) => (
-<div>
+const ListItem = ({ onClick, link, title, description, thumbnails, selected }) => (
+<a
+    onClick={onClick}
+    style={{
+        textDecoration: selected ? 'underline' : 'none'
+    }}
+>
   <Media>
     <Media.Body>
       <Media.Heading>{title}</Media.Heading>
@@ -15,7 +20,7 @@ const ListItem = ({ link, title, description, thumbnails, selected }) => (
         <img width={128} height={64} src={thumbnails} alt="thumbnail" />
     </Media.Right>
   </Media>
-</div>
+</a>
 );
 
 ListItem.propTypes = {
@@ -26,6 +31,7 @@ ListItem.propTypes = {
       thumbnails: PropTypes.string,
       selected: PropTypes.bool,
   }),
+  onClick: PropTypes.func,
 };
 
 export default ListItem
