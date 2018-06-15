@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import SearchListItem from './searchListItem'
+import ListItem from '../ListItem'
 import { ListGroup, ListGroupItem } from 'react-bootstrap'
 
 const SearchingList = ({ searchingList }) => {
@@ -10,7 +10,7 @@ const SearchingList = ({ searchingList }) => {
 
       {searchingList.map(searchingListItem =>
         <ListGroupItem key={searchingListItem.id}>
-          <SearchListItem
+          <ListItem
             {...searchingListItem}
           />
         </ListGroupItem>

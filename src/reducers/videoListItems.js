@@ -5,10 +5,13 @@ const videoListItems = (state = [], action) => {
         ...state,
         {
           id: action.id,
-          name: action.name,
-          url: action.url,
+          link: action.link,
+          title: action.title,
           selected: false
         }
+
+
+
       ];
     case 'TOGGLE_ITEM_LIST':
       return state.map(itemList =>

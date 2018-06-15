@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const VideoListItem = ({ onClick, selected, name, url }) => (
+const VideoListItem = ({ onClick, selected, link, title, description, thumbnails }) => (
   <tr
     onClick={onClick}
     style={{
@@ -9,10 +9,16 @@ const VideoListItem = ({ onClick, selected, name, url }) => (
     }}
   >
     <th>
-      {name}
+      {link}
     </th>
     <th>
-      {url}
+      {title}
+    </th>
+    <th>
+      {description}
+    </th>
+    <th>
+      {thumbnails}
     </th>
   </tr>
 );
@@ -20,8 +26,10 @@ const VideoListItem = ({ onClick, selected, name, url }) => (
 VideoListItem.propTypes = {
   onClick: PropTypes.func.isRequired,
   selected: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
+  link: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  thumbnails: PropTypes.string,
 };
 
 export default VideoListItem

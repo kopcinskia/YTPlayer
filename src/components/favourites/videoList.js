@@ -21,7 +21,7 @@ const VideoList = ({ videoListItems, toggleListItem, getCurrentItem}) => (
           <VideoListItem
             key={videoListItem.id}
             {...videoListItem}
-            onClick={() => {toggleListItem(videoListItem.id); getCurrentItem(videoListItem.name, videoListItem.url)}}
+            onClick={() => {toggleListItem(videoListItem.id); getCurrentItem(videoListItem.title, videoListItem.link)}}
           />
         )}
       </tbody>
@@ -34,8 +34,10 @@ VideoList.propTypes = {
   videoListItems: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     selected: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
+    link: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    thumbnails: PropTypes.string,
   }).isRequired),
   toggleListItem: PropTypes.func.isRequired,
   getCurrentItem: PropTypes.func.isRequired,

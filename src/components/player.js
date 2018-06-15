@@ -7,7 +7,7 @@ import { Grid } from 'react-bootstrap'
 const Player = ({currentVideo}) => (
   <Grid>
     <ReactPlayer
-      url={currentVideo.url}
+      url={currentVideo.link}
       controls
     />
   </Grid>
@@ -16,8 +16,8 @@ const Player = ({currentVideo}) => (
 
 Player.propTypes = {
   currentVideo: PropTypes.shape({
-    name: PropTypes.string,
-    url: PropTypes.string
+    title: PropTypes.string,
+    link: PropTypes.string
   }),
 };
 
