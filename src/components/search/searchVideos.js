@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import SearchingInput from './searchingInput'
-import SearchingList from './searchingList'
+import defaultList from '../componentList/defaultList'
 
 //TODO ogarnij:
 // walidacja pustej tablicy z YT albo default + walidacja
@@ -19,8 +19,8 @@ const SearchVideos = ({ createSearchingList, searchingList }) => {
         createSearchingList={createSearchingList}
 
       />
-      <SearchingList
-        searchingList={searchingList}
+      <defaultList
+        defaultList={searchingList}
       />
     </div>
   )

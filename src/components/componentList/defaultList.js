@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import SearchListItem from './searchListItem'
+import ListItem from './ListItem'
 import { ListGroup, ListGroupItem } from 'react-bootstrap'
 
-const SearchingList = ({ searchingList }) => {
+const defaultList = ({ defaultList }) => {
   return (
     <ListGroup>
 
-      {searchingList.map(searchingListItem =>
+      {defaultList.map(searchingListItem =>
         <ListGroupItem key={searchingListItem.id}>
-          <SearchListItem
+          <ListItem
             {...searchingListItem}
           />
         </ListGroupItem>
@@ -20,10 +20,10 @@ const SearchingList = ({ searchingList }) => {
 
 };
 
-SearchingList.propTypes = {
-  searchingList: PropTypes.arrayOf(PropTypes.shape({
+defaultList.propTypes = {
+  defaultList: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
-  })),
+  })).isRequired,
 };
 
-export default SearchingList;
+export default defaultList;
