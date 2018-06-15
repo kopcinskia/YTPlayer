@@ -48,11 +48,6 @@ const defaultState = {
     },
 
   },
-// Tymczasowo
-  currentVideo: {
-    name: 'AAAAAAAAAAAaaa',
-    url: 'https://www.youtube.com/watch?v=ysz5S6PUM-U'
-  },
 };
 
 export default initialState;

@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { createSearchingList } from '../actions/searchActions'
 import SearchVideos from '../components/search/searchVideos'
 
-
 const mapStateToProps = state => ({
   searchingList: state.searchingList,
 });

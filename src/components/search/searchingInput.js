@@ -9,6 +9,9 @@ const opts =  {
   key: 'AIzaSyCNSPr_DNFZasLvR_ygqeieKYwlbuh5GCw'
 };
 
+//TODO ulepsz walidację
+//przykład validacji -> https://github.com/Remchi/reddice/blob/master/client/components/login/LoginForm.js
+
 const SearchVideosInput = ({ createSearchingList }) => {
   let searchInput;
 
@@ -16,16 +19,12 @@ const SearchVideosInput = ({ createSearchingList }) => {
     <form onSubmit={e => {
       e.preventDefault();
       if (searchInput.value.trim())  {
-
         search(searchInput.value, opts, function (err, results) {
 
           if (err) return console.error(err, 'Search list ERR!!');
           createSearchingList(results);
         })
       } else {
-
-        //TODO ulepsz walidację
-        //przykład validacji -> https://github.com/Remchi/reddice/blob/master/client/components/login/LoginForm.js
 
         alert('Wpisz poprawne dane w formularzu SEARCH!!!!')
       }

@@ -4,7 +4,6 @@ import AddListItem from '../containers/addListItemContainer'
 import FavouriteVideoList from '../containers/videoListContainer'
 import SearchVideos from '../containers/searchVideoContainer'
 
- //todo https://www.youtube.com/watch?v=jgVkR5EKI68
 class ListTabs extends React.Component {
   render() {
     return (

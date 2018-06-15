@@ -14,19 +14,15 @@ require('react-bootstrap');
 require('bootstrap/dist/css/bootstrap.min.css');
 require('./main.css');
 
-//TODO nie ma sensu zamieniać bootstrapa na coś innego
-// ogarnij własne csski
+//TODO
 // + pre processor SASS
 
-
-//zagnieżdżony stan !!! https://github.com/reduxjs/redux/blob/master/docs/recipes/reducers/ImmutableUpdatePatterns.md
+// Zmień nzawy reducerów na Red z tyłu albo z przodu
 const rootReducer = combineReducers({
   favourites: combineReducers({
     videoListItems: videoListItems,
     currentVideo: currentVideo
   }),
-  // videoListItems: favourites,
-  currentVideo: currentVideo,
   searchingList: searchingList,
 
 });

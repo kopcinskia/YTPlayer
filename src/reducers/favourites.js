@@ -11,3 +11,7 @@
 // };
 //
 // export default favourites
+
+
+
+//TODO akcja pomiędzy stanami w zagnieźdźonym
