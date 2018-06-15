@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Media } from 'react-bootstrap'
 
-const ListItem = ({ link, title, description, thumbnails }) => (
+const ListItem = ({ link, title, description, thumbnails, selected }) => (
 <div>
   <Media>
     <Media.Body>
@@ -19,12 +19,13 @@ const ListItem = ({ link, title, description, thumbnails }) => (
 );
 
 ListItem.propTypes = {
-  oneOfItems: {
+  oneOfItems: PropTypes.shape({
       link: PropTypes.string,
       title: PropTypes.string,
       description: PropTypes.string,
       thumbnails: PropTypes.string,
-  }
+      selected: PropTypes.bool,
+  }),
 };
 
 export default ListItem

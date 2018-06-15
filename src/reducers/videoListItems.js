@@ -5,8 +5,8 @@ const videoListItems = (state = [], action) => {
         ...state,
         {
           id: action.id,
-          name: action.name,
-          url: action.url,
+          title: action.title,
+          link: action.link,
           selected: false
         }
       ];

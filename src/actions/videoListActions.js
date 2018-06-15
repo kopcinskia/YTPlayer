@@ -12,8 +12,8 @@ export const toggleListItem = id => ({
   id
 });
 
-export const getCurrentItem = (name, url) => ({
+export const getCurrentItem = (title, link) => ({
   type: 'GET_CURRENT_ITEM',
-  name,
-  url,
+  title,
+  link,
 });

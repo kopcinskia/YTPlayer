@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import ListItem from './ListItem'
+import ListItem from './listItem'
 import { ListGroup, ListGroupItem } from 'react-bootstrap'
 
-const defaultList = ({ defaultList }) => {
+const DefaultList = ({ defaultList }) => {
   return (
     <ListGroup>
 
@@ -20,10 +20,10 @@ const defaultList = ({ defaultList }) => {
 
 };
 
-defaultList.propTypes = {
+DefaultList.propTypes = {
   defaultList: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
   })).isRequired,
 };
 
-export default defaultList;
+export default DefaultList;

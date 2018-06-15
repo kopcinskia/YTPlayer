@@ -25,33 +25,28 @@ const defaultState = {
     videoListItems: [
       {
         id: '0',
-        name: 'Two Feet - Go Fuck Yourself',
-        url: 'https://www.youtube.com/watch?v=SEptMnVlsJY',
+        title: 'Two Feet - Go Fuck Yourself',
+        link: 'https://www.youtube.com/watch?v=SEptMnVlsJY',
         selected: false,
       },
       {
         id: '1',
-        name: 'PatFlynn',
-        url: 'https://www.youtube.com/watch?v=CdXEkHJhiVM',
+          title: 'PatFlynn',
+        link: 'https://www.youtube.com/watch?v=CdXEkHJhiVM',
         selected: false,
       },
       {
         id: '2',
-        name: 'SimpleProgrammer',
-        url: 'https://www.youtube.com/watch?v=AczzKgTeR2A',
+          title: 'SimpleProgrammer',
+        link: 'https://www.youtube.com/watch?v=AczzKgTeR2A',
         selected: false,
       },
     ],
     currentVideo: {
-      name: 'AAAAAAAAAAAaaa',
-      url: 'https://www.youtube.com/watch?v=ysz5S6PUM-U'
+        title: 'AAAAAAAAAAAaaa',
+      link: 'https://www.youtube.com/watch?v=ysz5S6PUM-U'
     },
 
-  },
-// Tymczasowo
-  currentVideo: {
-    name: 'AAAAAAAAAAAaaa',
-    url: 'https://www.youtube.com/watch?v=ysz5S6PUM-U'
   },
 };
 
