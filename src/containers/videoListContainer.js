@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   toggleListItem: id => dispatch(toggleListItem(id)),
-  getCurrentItem: (id, name, url) => dispatch(getCurrentItem(id, name, url)),
+  getCurrentItem: (id, title, link) => dispatch(getCurrentItem(id, title, link)),
 });
 
 export default connect(

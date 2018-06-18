@@ -5,9 +5,6 @@ export const addListItem = (id, link, title, description, thumbnails, selected) 
   id: v4().toString(),
   link,
   title,
-  description,
-  thumbnails,
-  selected
 });
 
 export const toggleListItem = id => ({
@@ -15,8 +12,8 @@ export const toggleListItem = id => ({
   id
 });
 
-export const getCurrentItem = (id, link) => ({
+export const getCurrentItem = (title, link) => ({
   type: 'GET_CURRENT_ITEM',
-  id,
+  title,
   link,
 });

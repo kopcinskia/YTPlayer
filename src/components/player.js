@@ -16,7 +16,6 @@ const Player = ({currentVideo}) => (
 
 Player.propTypes = {
   currentVideo: PropTypes.shape({
-    title: PropTypes.string,
     link: PropTypes.string
   }),
 };
