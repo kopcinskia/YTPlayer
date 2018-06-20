@@ -1,6 +1,6 @@
 import { v4 } from 'node-uuid'
 
-export const addListItem = (id, link, title, description, thumbnails, selected) => ({
+export const addListItem = (id, link, title) => ({
   type: 'ADD_LIST_ITEM',
   id: v4().toString(),
   link,

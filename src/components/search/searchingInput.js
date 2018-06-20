@@ -11,7 +11,7 @@ const opts =  {
 
 //TODO ulepsz walidację
 //przykład validacji -> https://github.com/Remchi/reddice/blob/master/client/components/login/LoginForm.js
-
+//stwóż deafoltowy input
 const SearchVideosInput = ({ createSearchingList }) => {
   let searchInput;
 
