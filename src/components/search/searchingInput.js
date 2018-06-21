@@ -1,24 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import InputForms from '../defaults/inputForms'
 import { Button, Grid, Row, Col } from 'react-bootstrap'
+import search from 'youtube-search'
+import validator from 'validator';
 
-const search = require('youtube-search');
+import InputForms from '../defaults/inputForms'
+
 const opts =  {
   maxResults: 20,
   key: 'AIzaSyCNSPr_DNFZasLvR_ygqeieKYwlbuh5GCw'
 };
 
+let searchInput;
+
 //TODO ulepsz walidację
 //przykład validacji -> https://github.com/Remchi/reddice/blob/master/client/components/login/LoginForm.js
+//validacja i wyswietlanie komunikatów powinno odbywać się poziom niżej poprzez funkcję która zostanie przekazana w propsach
+//skożystaj z search validatora aby stworzys funkcje i przekacac jej message do dydołania
 
 const SearchVideosInput = ({ createSearchingList }) => {
-  let searchInput;
+
 
   return (
     <form onSubmit={e => {
       e.preventDefault();
-      if (searchInput.value.trim())  {
+
+
+
+
+      //// Popraw
+      if (!validator.isEmpty(searchInput.value) )  {
         search(searchInput.value, opts, function (err, results) {
 
           if (err) return console.error(err, 'Search list ERR!!');
