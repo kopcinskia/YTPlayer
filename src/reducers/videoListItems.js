@@ -1,6 +1,7 @@
 const videoListItems = (state = [], action) => {
   switch (action.type) {
     case 'ADD_LIST_ITEM':
+      console.log(action.title, 'Title')
       return [
         ...state,
         {
@@ -9,8 +10,6 @@ const videoListItems = (state = [], action) => {
           link: action.link,
           selected: false
         }
-
-
 
       ];
     case 'TOGGLE_ITEM_LIST':

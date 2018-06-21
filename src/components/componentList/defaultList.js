@@ -10,11 +10,11 @@ const DefaultList = ({ defaultList, toggleListItem, getCurrentItem}) => {
   return (
     <ListGroup>
 
-      {defaultList.map(searchingListItem =>
-        <ListGroupItem key={searchingListItem.id}>
+      {defaultList.map(defaultListItem =>
+        <ListGroupItem key={defaultListItem.id}>
           <ListItem
-            {...searchingListItem}
-            onClick={() => {toggleListItem(searchingListItem.id); getCurrentItem(searchingListItem.title, searchingListItem.link)}}
+            {...defaultListItem}
+            onClick={() => {toggleListItem(defaultListItem.id); getCurrentItem(defaultListItem.title, defaultListItem.link)}}
           />
         </ListGroupItem>
       )}

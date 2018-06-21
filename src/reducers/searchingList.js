@@ -1,3 +1,5 @@
+//TOdo zmiana zazw rreducerów
+
 const searchingList = (state = [], action) => {
   switch (action.type) {
       case 'CREATING_SEARCHING_LIST':
@@ -5,8 +7,8 @@ const searchingList = (state = [], action) => {
       return(
         action.array.map(seatchItem => ({
           id: seatchItem.id,
-          link: seatchItem.link,
           title: seatchItem.title,
+          link: seatchItem.link,
           description: seatchItem.description,
           thumbnails: seatchItem.thumbnails.default.url,
         })));

@@ -18,6 +18,7 @@ const AddListItem = ({ dispatch }) => {
         e.preventDefault();
         if (title.value.trim() && regYtLink.test(link.value))  {
           dispatch(addListItem(title.value, link.value));
+          console.log(title.value, 'Title w komponecie')
         } else {
 
           //TODO ulepsz walidację
