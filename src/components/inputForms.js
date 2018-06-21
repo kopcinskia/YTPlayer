@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap'
 
 
-class Form extends React.Component {
+class InputForms extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -12,9 +12,11 @@ class Form extends React.Component {
     this.state = {
       value: ''
     };
+
   }
 
   //TODO popraw walidację
+  //tooltip
 
   getValidationState() {
     const length = this.state.value.length;
@@ -42,14 +44,15 @@ class Form extends React.Component {
           placeholder={ this.props.placeholder }
           onChange={this.handleChange}
         />
+
         <FormControl.Feedback />
-        <HelpBlock>{ this.props.helper }</HelpBlock>
+        <HelpBlock>{this.props.helper}</HelpBlock>
       </FormGroup>
     );
   }
 }
 
-Form.propTypes = {
+InputForms.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   placeholder: PropTypes.string,
@@ -58,4 +61,4 @@ Form.propTypes = {
   inputRef: PropTypes.func,
 };
 
-export default Form;
+export default InputForms;

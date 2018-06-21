@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Form from '../forms'
+import InputForms from '../inputForms'
 import { Button, Grid, Row, Col } from 'react-bootstrap'
 
 const search = require('youtube-search');
@@ -11,7 +11,7 @@ const opts =  {
 
 //TODO ulepsz walidację
 //przykład validacji -> https://github.com/Remchi/reddice/blob/master/client/components/login/LoginForm.js
-//stwóż deafoltowy input
+
 const SearchVideosInput = ({ createSearchingList }) => {
   let searchInput;
 
@@ -32,17 +32,17 @@ const SearchVideosInput = ({ createSearchingList }) => {
     }}>
         <Grid>
           <Row>
-            <Col sm={12} md={10} >
-              <Form
+            <Col sm={12} md={8} >
+              <InputForms
                 inputRef={ node => searchInput = node }
-                id='aaa'
+                id='searchInput'
                 helper='Search on YT'
                 placeholder='Enter text'
                 label='Search Video: '
                 type='text'
               />
             </Col>
-            <Col sm={12} md={2}>
+            <Col xs={2} xsOffset={5}>
               <Button bsSize='large' type="submit">
                 Search
               </Button>

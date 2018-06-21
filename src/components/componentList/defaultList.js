@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import ListItem from './listItem'
 import { ListGroup, ListGroupItem } from 'react-bootstrap'
 
+// zmień onClick na bardziej rozgarnięty
+
 const DefaultList = ({ defaultList, toggleListItem, getCurrentItem}) => {
   return (
     <ListGroup>

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 import VideoListItem from './videoListItem'
 
+// przerobienie na Listcomponent
+
 const VideoList = ({ videoListItems, toggleListItem, getCurrentItem}) => (
   <div>
     <table>

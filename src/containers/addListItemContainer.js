@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Grid, Row, Col, Button} from 'react-bootstrap'
+
 import { addListItem } from '../actions/videoListActions'
+import InputForms from '../components/inputForms'
 
 const AddListItem = ({ dispatch }) => {
   let title;
@@ -24,11 +27,35 @@ const AddListItem = ({ dispatch }) => {
         title.value = '';
         link.value = '';
       }}>
-        <input ref={node => title = node} />
-        <input ref={node => link = node} />
-        <button type="submit">
-          Add Item
-        </button>
+        <Grid>
+          <Row>
+            <Col sm= {12}  md={6}>
+              <InputForms inputRef={node => title = node}
+                          id='titleInput'
+                          helper='Please enter name of media'
+                          placeholder='Enter name'
+                          label='Title: '
+                          type='text'
+              />
+            </Col>
+            <Col sm= {12} md={6}>
+              <InputForms inputRef={node => link = node}
+                          id='linkInput'
+                          helper='link example: https://www.youtube.com/watch?v=Zg7VCZe9BTI'
+                          placeholder='Paste YT link'
+                          label='YT link: '
+                          type='text'
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col xsOffset={5} xs={2}>
+              <Button type="submit">
+                Add Item
+              </Button>
+            </Col>
+          </Row>
+        </Grid>
       </form>
     </div>
   )
