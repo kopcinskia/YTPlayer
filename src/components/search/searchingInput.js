@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import InputForms from '../inputForms'
+import InputForms from '../defaults/inputForms'
 import { Button, Grid, Row, Col } from 'react-bootstrap'
 
 const search = require('youtube-search');

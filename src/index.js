@@ -5,9 +5,9 @@ import { Provider } from 'react-redux'
 import { combineReducers } from 'redux'
 import App from './components/App'
 
-import videoListItems from './reducers/videoListItems'
-import currentVideo from './reducers/currentVideo'
-import searchingList from './reducers/searchingList'
+import videoListItemsReducer from './reducers/videoListItemsReducer'
+import currentVideoReducer from './reducers/currentVideoReducer'
+import searchingListReducer from './reducers/searchingListReducer'
 import initialState, { seveState } from './initialState'
 
 require('react-bootstrap');
@@ -25,10 +25,10 @@ require('./main.css');
 
 const rootReducer = combineReducers({
   favourites: combineReducers({
-    videoListItems: videoListItems,
-    currentVideo: currentVideo
+    videoListItems: videoListItemsReducer,
+    currentVideo: currentVideoReducer
   }),
-  searchingList: searchingList,
+  searchingList: searchingListReducer,
 
 });
 

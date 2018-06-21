@@ -1,6 +1,4 @@
-//TOdo zmiana zazw rreducerów
-
-const searchingList = (state = [], action) => {
+const searchingListReducer = (state = [], action) => {
   switch (action.type) {
       case 'CREATING_SEARCHING_LIST':
 
@@ -17,4 +15,4 @@ const searchingList = (state = [], action) => {
   }
 };
 
-export default searchingList;
+export default searchingListReducer;

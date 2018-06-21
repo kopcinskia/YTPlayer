@@ -3,13 +3,14 @@ import { connect } from 'react-redux'
 import { Grid, Row, Col, Button} from 'react-bootstrap'
 
 import { addListItem } from '../actions/videoListActions'
-import InputForms from '../components/inputForms'
+import InputForms from '../components/defaults/inputForms'
 
 const AddListItem = ({ dispatch }) => {
   let title;
   let link;
   const regYtLink = /^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/(watch\?v=).+/;
 
+  //ToDO Ustrukturyzuj buttonki i
   //TODO ulepsz walidację
 
   return (

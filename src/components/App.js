@@ -6,8 +6,7 @@ import ListTabs from './listTabs'
 
 export default class App extends React.Component{
 
-    render() {
-
+  render() {
     return(
       <Grid className='container-fluid'>
         <Row className='show-grid'>

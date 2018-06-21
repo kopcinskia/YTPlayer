@@ -1,4 +1,4 @@
-const currentVideo = (state = {}, action) => {
+const currentVideoReducer = (state = {}, action) => {
 
   switch (action.type) {
     case 'GET_CURRENT_ITEM':
@@ -11,4 +11,4 @@ const currentVideo = (state = {}, action) => {
   }
 };
 
-export default currentVideo;
+export default currentVideoReducer;

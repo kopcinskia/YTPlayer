@@ -1,4 +1,4 @@
-const videoListItems = (state = [], action) => {
+const videoListItemsReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_LIST_ITEM':
       console.log(action.title, 'Title')
@@ -24,4 +24,4 @@ const videoListItems = (state = [], action) => {
   }
 };
 
-export default videoListItems
+export default videoListItemsReducer

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import SearchingInput from './searchingInput'
-import DefaultList from '../componentList/defaultList'
+import DefaultList from '../defaults/defaultList'
 
 
 //TODO ogarnij:

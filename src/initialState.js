@@ -28,7 +28,7 @@ const defaultState = {
         title: 'Two Feet - Go Fuck Yourself',
         link: 'https://www.youtube.com/watch?v=SEptMnVlsJY',
         description: 'aaaaaaaaaaaaaaaaaaaa',
-        thumbnails: 'aaaaaaaaaaaaaaaaaaaa',
+        thumbnails: 'https://i.ytimg.com/vi/SEptMnVlsJY/default.jpg',
         selected: false
       },
       {
@@ -36,7 +36,7 @@ const defaultState = {
         title: 'PatFlynn',
         link: 'https://www.youtube.com/watch?v=CdXEkHJhiVM',
         description: 'aaaaaaaaaaaaaaaaaaaa',
-        thumbnails: 'aaaaaaaaaaaaaaaaaaaa',
+        thumbnails: 'https://yt3.ggpht.com/-55PWfpUCTGc/AAAAAAAAAAI/AAAAAAAAAAA/NcYhlCwx5ww/s88-c-k-no-mo-rj-c0xffffff/photo.jpg',
         selected: false
       },
       {
@@ -44,7 +44,7 @@ const defaultState = {
         title: 'SimpleProgrammer',
         link: 'https://www.youtube.com/watch?v=AczzKgTeR2A',
         description: 'aaaaaaaaaaaaaaaaaaaa',
-        thumbnails: 'aaaaaaaaaaaaaaaaaaaa',
+        thumbnails: 'https://i.ytimg.com/vi/TX6D2CDyE7I/default.jpg',
         selected: false
       },
     ],
