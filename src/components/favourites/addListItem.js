@@ -14,6 +14,7 @@ class AddListItem extends Component {
       regYtLink: /^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/(watch\?v=).+/,
     }
 
+    this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.getValidationState = this.getValidationState.bind(this);
   }
@@ -27,37 +28,38 @@ class AddListItem extends Component {
     return null;
   }
 
+  onChange(e) {
+    this.setState({ [e.target.id]: e.target.value });
+  }
+
   onSubmit(e) {
     e.preventDefault();
 
-    if (this.state.title.value.trim() && this.state.regYtLink.test(this.state.link.value)) {
-      this.props.addListItem(this.state.title.value, this.state.link.value)
+    if (this.state.title.trim() && this.state.regYtLink.test(this.state.link)) {
+      this.props.addListItem(this.state.title, this.state.link)
 
     } else {
-
-      //TODO korzystarz z REfa i State jednoscześnie zmień to
 
       alert('Wpisz poprawne dane w formularzu ADD ITEM!!!!')
     }
     this.setState()
     {
-      this.state.title.value = '';
-      this.state.link.value = '';
+      this.state.title = '';
+      this.state.link = '';
     }
   }
   //ToDO Ustrukturyzuj buttonki i
   render() {
     return (
       <div>
-        {console.log(this.getValidationState(this.state.title), 'AAAAAAAAAAAAAAAa')}
         <form onSubmit={this.onSubmit}>
           <Grid>
             <Row>
               <Col sm={12} md={6}>
                 <InputForms
-                  inputRef={node => this.state.title = node}
                   getValidationState={this.getValidationState}
-                  id='titleInput'
+                  onChange={this.onChange}
+                  id='title'
                   helper='Please enter name of media'
                   placeholder='Enter name'
                   label='Title: '
@@ -66,9 +68,9 @@ class AddListItem extends Component {
               </Col>
               <Col sm={12} md={6}>
                 <InputForms
-                  inputRef={node => this.state.link = node}
                   getValidationState={this.getValidationState}
-                  id='linkInput'
+                  onChange={this.onChange}
+                  id='link'
                   helper='link example: https://www.youtube.com/watch?v=Zg7VCZe9BTI'
                   placeholder='Paste YT link'
                   label='YT link: '
