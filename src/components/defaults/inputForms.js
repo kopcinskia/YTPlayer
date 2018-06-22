@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap'
 
 //Ma być głupi
-const InputForms = ({ id, getValidationState, onChange, label, type, placeholder, helper }) => {
+const InputForms = ({ id, validationProp, onChange, label, type, placeholder, helper }) => {
 
   //TODO walidacja nie działa
   //tooltip
@@ -11,7 +11,7 @@ const InputForms = ({ id, getValidationState, onChange, label, type, placeholder
   return (
     <FormGroup
       controlId={id}
-      validationState={getValidationState}
+      validationState={validationProp}
     >
       <ControlLabel>{label}</ControlLabel>
       <FormControl
@@ -33,7 +33,7 @@ InputForms.propTypes = {
   helper: PropTypes.string,
   type: PropTypes.string,
   inputRef: PropTypes.func,
-  getValidationState: PropTypes.string,
+  validationProp: PropTypes.string,
   onChange: PropTypes.func,
 
 };

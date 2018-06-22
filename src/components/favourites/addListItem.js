@@ -9,6 +9,7 @@ class AddListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      validation: null,
       title: '',
       link: '',
       regYtLink: /^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/(watch\?v=).+/,
@@ -19,17 +20,22 @@ class AddListItem extends Component {
     this.getValidationState = this.getValidationState.bind(this);
   }
 
-  //TODO walidacja nie działa
+  //TODO dzieła zrobić cos tego typu pomyśl czy każdy id nie powinien mieć swojego stanu walidacji
   getValidationState(a) {
     const length = a.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
-    else if (length > 0) return 'error';
-    return null;
+    if (length > 5) {
+      this.setState({validation: null})
+    } else if (length > 3) {
+      this.setState({validation: 'warning'})
+    } else if (length > 0) {
+      this.setState({validation: 'error'})
+    }
   }
 
   onChange(e) {
-    this.setState({ [e.target.id]: e.target.value });
+    this.setState({ [e.target.id]: e.target.value })
+    //TODO wywalić z onChenga zrobin na blurze
+    this.getValidationState(e.target.value)
   }
 
   onSubmit(e) {
@@ -57,7 +63,7 @@ class AddListItem extends Component {
             <Row>
               <Col sm={12} md={6}>
                 <InputForms
-                  getValidationState={this.getValidationState}
+                  validationProp={this.state.validation}
                   onChange={this.onChange}
                   id='title'
                   helper='Please enter name of media'
@@ -68,7 +74,7 @@ class AddListItem extends Component {
               </Col>
               <Col sm={12} md={6}>
                 <InputForms
-                  getValidationState={this.getValidationState}
+                  validationProp={this.state.validation}
                   onChange={this.onChange}
                   id='link'
                   helper='link example: https://www.youtube.com/watch?v=Zg7VCZe9BTI'
