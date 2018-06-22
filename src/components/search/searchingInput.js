@@ -20,15 +20,13 @@ let searchInput;
 
 const SearchVideosInput = ({ createSearchingList }) => {
 
-
+//TODO ma być mądry
   return (
     <form onSubmit={e => {
       e.preventDefault();
 
 
-
-
-      //// Popraw
+      ////TODO Popraw
       if (!validator.isEmpty(searchInput.value) )  {
         search(searchInput.value, opts, function (err, results) {
 

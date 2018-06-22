@@ -2,54 +2,28 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap'
 
+//Ma być głupi
+const InputForms = ({ id, getValidationState, label, type, placeholder, inputRef, helper }) => {
 
-class InputForms extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.handleChange = this.handleChange.bind(this);
-
-    this.state = {
-      value: ''
-    };
-
-  }
-
-  //TODO popraw walidację
+  //TODO walidacja nie działa
   //tooltip
 
-  getValidationState() {
-    const length = this.state.value.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
-    else if (length > 0) return 'error';
-    return null;
-  }
+  return (
+    <FormGroup
+      controlId={id}
+      validationState={getValidationState}
+    >
+      <ControlLabel>{label}</ControlLabel>
+      <FormControl
+        type={type}
+        placeholder={placeholder}
+        inputRef={inputRef}
+      />
 
-  handleChange(e) {
-    this.setState({ value: e.target.value });
-  }
-
-  render() {
-    return (
-      <FormGroup
-        controlId={ this.props.id }
-        validationState={this.getValidationState()}
-      >
-        <ControlLabel>{ this.props.label }</ControlLabel>
-        <FormControl
-          inputRef={ this.props.inputRef }
-          type={ this.props.type }
-          value={this.state.value}
-          placeholder={ this.props.placeholder }
-          onChange={this.handleChange}
-        />
-
-        <FormControl.Feedback />
-        <HelpBlock>{this.props.helper}</HelpBlock>
-      </FormGroup>
-    );
-  }
+      <FormControl.Feedback />
+      <HelpBlock>{helper}</HelpBlock>
+    </FormGroup>
+  );
 }
 
 InputForms.propTypes = {
@@ -59,6 +33,7 @@ InputForms.propTypes = {
   helper: PropTypes.string,
   type: PropTypes.string,
   inputRef: PropTypes.func,
+  getValidationState: PropTypes.string,
 };
 
 export default InputForms;
