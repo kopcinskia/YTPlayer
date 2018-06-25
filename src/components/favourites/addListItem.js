@@ -20,7 +20,7 @@ class AddListItem extends Component {
     this.getValidationState = this.getValidationState.bind(this);
   }
 
-  //TODO dzieła zrobić cos tego typu pomyśl czy każdy id nie powinien mieć swojego stanu walidacji
+  //TODO dziła zrobić cos tego typu pomyśl czy każdy id nie powinien mieć swojego stanu walidacji
   getValidationState(a) {
     const length = a.length;
     if (length > 5) {
@@ -34,6 +34,7 @@ class AddListItem extends Component {
 
   onChange(e) {
     this.setState({ [e.target.id]: e.target.value })
+
     //TODO wywalić z onChenga zrobin na blurze
     this.getValidationState(e.target.value)
   }
@@ -48,13 +49,15 @@ class AddListItem extends Component {
 
       alert('Wpisz poprawne dane w formularzu ADD ITEM!!!!')
     }
-    this.setState()
-    {
-      this.state.title = '';
-      this.state.link = '';
-    }
+    //TODO To nie diała !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! sprubój na referencjach
+    this.setState(
+      {
+        title: '',
+      link: ''
+  })
+    console.log(this.state.title, 'TYTUŁ')
   }
-  //ToDO Ustrukturyzuj buttonki i
+  //ToDO Ustrukturyzuj buttonki
   render() {
     return (
       <div>

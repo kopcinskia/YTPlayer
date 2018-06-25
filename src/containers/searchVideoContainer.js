@@ -9,8 +9,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   createSearchingList: result => dispatch(createSearchingList(result)),
-    toggleListItem: id => dispatch(toggleListItem(id)),
-    getCurrentItem: (id, title, link) => dispatch(getCurrentItem(id, title, link)),
+  toggleListItem: id => dispatch(toggleListItem(id)),
+  getCurrentItem: (id, title, link) => dispatch(getCurrentItem(id, title, link)),
 });
 
 export default connect(

@@ -1,49 +1,63 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button, Grid, Row, Col } from 'react-bootstrap'
 import search from 'youtube-search'
 import validator from 'validator';
+import { createSearchingList } from '../../actions/searchActions'
 
 import InputForms from '../defaults/inputForms'
-
-const opts =  {
-  maxResults: 20,
-  key: 'AIzaSyCNSPr_DNFZasLvR_ygqeieKYwlbuh5GCw'
-};
-
-let searchInput;
 
 //TODO ulepsz walidację
 //przykład validacji -> https://github.com/Remchi/reddice/blob/master/client/components/login/LoginForm.js
 //validacja i wyswietlanie komunikatów powinno odbywać się poziom niżej poprzez funkcję która zostanie przekazana w propsach
 //skożystaj z search validatora aby stworzys funkcje i przekacac jej message do dydołania
 
-const SearchVideosInput = ({ createSearchingList }) => {
+class SearchVideosInput extends Component {
+  constructor(props) {
+    super(props);
 
-//TODO ma być mądry
-  return (
-    <form onSubmit={e => {
-      e.preventDefault();
+    this.state = {
+      searchInput: ''
+    };
 
+    this.opts =  {
+      maxResults: 20,
+      key: 'AIzaSyCNSPr_DNFZasLvR_ygqeieKYwlbuh5GCw'
+    };
+  }
 
-      ////TODO Popraw
-      if (!validator.isEmpty(searchInput.value) )  {
-        search(searchInput.value, opts, function (err, results) {
+  ////TODO Popraw to toeż nie działa !!!!!!!!!!!!
 
-          if (err) return console.error(err, 'Search list ERR!!');
-          createSearchingList(results);
-        })
-      } else {
+  onChange(e) {
+    this.setState({ [e.searchInput]: e.target.value })
+  }
 
-        alert('Wpisz poprawne dane w formularzu SEARCH!!!!')
-      }
-      searchInput.value = '';
-    }}>
+  //TODO popraw!
+  onSubmit(e){
+    e.preventDefault();
+
+    if (!validator.isEmpty(this.state.searchInput)) {
+      search(this.state.searchInput, this.opts, function (err, results) {
+
+        if (err) return console.error(err, 'Search list ERR!!');
+        createSearchingList(results);
+      })
+    } else {
+
+      alert('Wpisz poprawne dane w formularzu SEARCH!!!!')
+    }
+    //TODO To nie diała !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    this.setState({ searchInput: '' })
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.onSubmit}>
         <Grid>
           <Row>
-            <Col sm={12} md={8} >
+            <Col sm={12} md={8}>
               <InputForms
-                inputRef={ node => searchInput = node }
+                onChange={this.onChange}
                 id='searchInput'
                 helper='Search on YT'
                 placeholder='Enter text'
@@ -58,8 +72,9 @@ const SearchVideosInput = ({ createSearchingList }) => {
             </Col>
           </Row>
         </Grid>
-    </form>
-  )
+      </form>
+    )
+  }
 };
 
 SearchVideosInput.propTypes = {
