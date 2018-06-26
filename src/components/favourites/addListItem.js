@@ -9,7 +9,8 @@ class AddListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      validation: null,
+      valTitle: null,
+      valLink: null,
       title: '',
       link: '',
       regYtLink: /^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/(watch\?v=).+/,
@@ -17,47 +18,53 @@ class AddListItem extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onBlur = this.onBlur.bind(this);
     this.getValidationState = this.getValidationState.bind(this);
   }
 
-  //TODO dziła zrobić cos tego typu pomyśl czy każdy id nie powinien mieć swojego stanu walidacji
-  getValidationState(a) {
+  //TODO ta walidacja działa znajdź cikawsze warunki i wyrzuć z tego pliku
+  getValidationState(id, a) {
     const length = a.length;
-    if (length > 5) {
-      this.setState({validation: null})
-    } else if (length > 3) {
-      this.setState({validation: 'warning'})
-    } else if (length > 0) {
-      this.setState({validation: 'error'})
+    switch (id) {
+      case 'title':
+        if (length > 5) {
+          this.setState({valTitle: null})
+        } else if (length > 3) {
+          this.setState({valTitle: 'warning'})
+        } else if (length > 0) {
+          this.setState({valTitle: 'error'})
+        }
+        break;
+      case 'link':
+        if (length > 5) {
+          this.setState({valLink: null})
+        } else if (length > 3) {
+          this.setState({valLink: 'warning'})
+        } else if (length > 0) {
+          this.setState({valLink: 'error'})
+        }
+        break;
     }
+  }
+
+  onBlur(e) {
+    this.getValidationState(e.target.id, e.target.value)
   }
 
   onChange(e) {
     this.setState({ [e.target.id]: e.target.value })
-
-    //TODO wywalić z onChenga zrobin na blurze
-    this.getValidationState(e.target.value)
   }
 
-  onSubmit(e) {
-    e.preventDefault();
-
+  onSubmit() {
     if (this.state.title.trim() && this.state.regYtLink.test(this.state.link)) {
       this.props.addListItem(this.state.title, this.state.link)
-
-    } else {
-
+    }else {
+      //TODO walidation Message
       alert('Wpisz poprawne dane w formularzu ADD ITEM!!!!')
     }
-    //TODO To nie diała !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! sprubój na referencjach
-    this.setState(
-      {
-        title: '',
-      link: ''
-  })
-    console.log(this.state.title, 'TYTUŁ')
+    this.setState({title: '', link: ''})
   }
-  //ToDO Ustrukturyzuj buttonki
+
   render() {
     return (
       <div>
@@ -66,24 +73,26 @@ class AddListItem extends Component {
             <Row>
               <Col sm={12} md={6}>
                 <InputForms
-                  validationProp={this.state.validation}
+                  validationProp={this.state.valTitle}
                   onChange={this.onChange}
                   id='title'
                   helper='Please enter name of media'
                   placeholder='Enter name'
                   label='Title: '
                   type='text'
+                  onBlur={this.onBlur}
                 />
               </Col>
               <Col sm={12} md={6}>
                 <InputForms
-                  validationProp={this.state.validation}
+                  validationProp={this.state.valLink}
                   onChange={this.onChange}
                   id='link'
                   helper='link example: https://www.youtube.com/watch?v=Zg7VCZe9BTI'
                   placeholder='Paste YT link'
                   label='YT link: '
                   type='text'
+                  onBlur={this.onBlur}
                 />
               </Col>
             </Row>

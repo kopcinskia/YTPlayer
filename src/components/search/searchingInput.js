@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Button, Grid, Row, Col } from 'react-bootstrap'
 import search from 'youtube-search'
 import validator from 'validator';
-import { createSearchingList } from '../../actions/searchActions'
 
 import InputForms from '../defaults/inputForms'
 
@@ -12,42 +11,40 @@ import InputForms from '../defaults/inputForms'
 //validacja i wyswietlanie komunikatów powinno odbywać się poziom niżej poprzez funkcję która zostanie przekazana w propsach
 //skożystaj z search validatora aby stworzys funkcje i przekacac jej message do dydołania
 
-class SearchVideosInput extends Component {
+//można by dodać przycisk do kasowania zawartości
+
+class SearchInput extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      searchInput: ''
-    };
+    this.state = {searchInput:''};
 
-    this.opts =  {
+    this.opts = {
       maxResults: 20,
       key: 'AIzaSyCNSPr_DNFZasLvR_ygqeieKYwlbuh5GCw'
     };
-  }
 
-  ////TODO Popraw to toeż nie działa !!!!!!!!!!!!
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
 
   onChange(e) {
-    this.setState({ [e.searchInput]: e.target.value })
+    this.setState({ searchInput: e.target.value })
   }
 
-  //TODO popraw!
+  //TODO walidacja zaczęta w addListItem
   onSubmit(e){
-    e.preventDefault();
+    e.preventDefault()
 
     if (!validator.isEmpty(this.state.searchInput)) {
+      const searchingAction = this.props.createSearchingList
       search(this.state.searchInput, this.opts, function (err, results) {
-
         if (err) return console.error(err, 'Search list ERR!!');
-        createSearchingList(results);
+        searchingAction(results)
       })
     } else {
-
       alert('Wpisz poprawne dane w formularzu SEARCH!!!!')
     }
-    //TODO To nie diała !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    this.setState({ searchInput: '' })
   }
 
   render() {
@@ -77,8 +74,8 @@ class SearchVideosInput extends Component {
   }
 };
 
-SearchVideosInput.propTypes = {
+SearchInput.propTypes = {
   createSearchingList: PropTypes.func,
 };
 
-export default SearchVideosInput;
+export default SearchInput;

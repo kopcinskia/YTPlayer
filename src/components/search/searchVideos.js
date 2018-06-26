@@ -29,8 +29,8 @@ SearchVideos.propTypes = {
   searchingList: PropTypes.arrayOf(PropTypes.shape({
   })),
   createSearchingList: PropTypes.func,
-    toggleListItem: PropTypes.func.isRequired,
-    getCurrentItem: PropTypes.func.isRequired,
+  toggleListItem: PropTypes.func.isRequired,
+  getCurrentItem: PropTypes.func.isRequired,
 };
 
 export default SearchVideos;
