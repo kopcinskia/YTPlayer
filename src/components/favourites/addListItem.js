@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import isEmpty from 'lodash/isEmpty'
 
 import { Grid, Row, Col, Button} from 'react-bootstrap'
 
 import InputForms from '../defaults/inputForms'
+import inputValidate from '../../validations/addValidator'
 
 class AddListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      valTitle: null,
-      valLink: null,
+      errorsMessages: {},
       title: '',
       link: '',
       regYtLink: /^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/(watch\?v=).+/,
@@ -19,36 +20,27 @@ class AddListItem extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onBlur = this.onBlur.bind(this);
-    this.getValidationState = this.getValidationState.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+    this.getValidation = this.getValidation.bind(this);
   }
 
-  //TODO ta walidacja działa znajdź cikawsze warunki i wyrzuć z tego pliku
-  getValidationState(id, a) {
-    const length = a.length;
-    switch (id) {
-      case 'title':
-        if (length > 5) {
-          this.setState({valTitle: null})
-        } else if (length > 3) {
-          this.setState({valTitle: 'warning'})
-        } else if (length > 0) {
-          this.setState({valTitle: 'error'})
-        }
-        break;
-      case 'link':
-        if (length > 5) {
-          this.setState({valLink: null})
-        } else if (length > 3) {
-          this.setState({valLink: 'warning'})
-        } else if (length > 0) {
-          this.setState({valLink: 'error'})
-        }
-        break;
+  //TODO sprawdzaj czy jest walidacja dla dalnego messega
+  getValidation() {
+
+    const errorsMessages = inputValidate(this.state)
+
+    isEmpty(errorsMessages) ? this.setState({ valid: true }) : this.setState({ valid: false })
+
+    if (this.state.valid) {
+      this.setState({ errorsMessages: errorsMessages })
     }
+
+    console.log(this.state.valid, 'valid')
   }
 
-  onBlur(e) {
-    this.getValidationState(e.target.id, e.target.value)
+  //TODO można by od tego uciec
+  onBlur() {
+    this.getValidation()
   }
 
   onChange(e) {
@@ -56,7 +48,7 @@ class AddListItem extends Component {
   }
 
   onSubmit() {
-    if (this.state.title.trim() && this.state.regYtLink.test(this.state.link)) {
+    if (!this.getValidation()) {
       this.props.addListItem(this.state.title, this.state.link)
     }else {
       //TODO walidation Message
@@ -73,7 +65,7 @@ class AddListItem extends Component {
             <Row>
               <Col sm={12} md={6}>
                 <InputForms
-                  validationProp={this.state.valTitle}
+                  // validationProp={this.state.valTitle}
                   onChange={this.onChange}
                   id='title'
                   helper='Please enter name of media'
@@ -85,7 +77,7 @@ class AddListItem extends Component {
               </Col>
               <Col sm={12} md={6}>
                 <InputForms
-                  validationProp={this.state.valLink}
+                  // validationProp={this.state.valLink}
                   onChange={this.onChange}
                   id='link'
                   helper='link example: https://www.youtube.com/watch?v=Zg7VCZe9BTI'
