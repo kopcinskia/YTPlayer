@@ -20,27 +20,22 @@ class AddListItem extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onBlur = this.onBlur.bind(this);
-    this.onBlur = this.onBlur.bind(this);
     this.getValidation = this.getValidation.bind(this);
   }
 
-  //TODO sprawdzaj czy jest walidacja dla dalnego messega
-  getValidation() {
+  getValidation(e) {
+    const errorsMessages = inputValidate(this.state, e)
+    this.setState({errorsMessages})
 
-    const errorsMessages = inputValidate(this.state)
-
-    isEmpty(errorsMessages) ? this.setState({ valid: true }) : this.setState({ valid: false })
-
-    if (this.state.valid) {
-      this.setState({ errorsMessages: errorsMessages })
-    }
-
-    console.log(this.state.valid, 'valid')
+    console.log(this.state.errorsMessages, 'valid')
   }
 
-  //TODO można by od tego uciec
-  onBlur() {
-    this.getValidation()
+  //TODO po blurze wliduje sie każdy element(Średniawka)
+
+  //TODO po dodaniu parametru e po blurze zostaje wykonany jedynie ta walidacja jakiej dotyczy blur
+
+  onBlur(e){
+    this.getValidation(e.target.id)
   }
 
   onChange(e) {
@@ -48,11 +43,14 @@ class AddListItem extends Component {
   }
 
   onSubmit() {
-    if (!this.getValidation()) {
+
+    if (isEmpty(this.state.errorsMessages)) {
+      console.log(this.state.errorsMessages, 'w ifie')
       this.props.addListItem(this.state.title, this.state.link)
     }else {
-      //TODO walidation Message
-      alert('Wpisz poprawne dane w formularzu ADD ITEM!!!!')
+      console.log(this.state.errorsMessages, 'w else')
+
+
     }
     this.setState({title: '', link: ''})
   }
@@ -65,7 +63,7 @@ class AddListItem extends Component {
             <Row>
               <Col sm={12} md={6}>
                 <InputForms
-                  // validationProp={this.state.valTitle}
+                  validationProp={this.state.errorsMessages.title}
                   onChange={this.onChange}
                   id='title'
                   helper='Please enter name of media'
@@ -77,7 +75,7 @@ class AddListItem extends Component {
               </Col>
               <Col sm={12} md={6}>
                 <InputForms
-                  // validationProp={this.state.valLink}
+                  validationProp={this.state.errorsMessages.link}
                   onChange={this.onChange}
                   id='link'
                   helper='link example: https://www.youtube.com/watch?v=Zg7VCZe9BTI'

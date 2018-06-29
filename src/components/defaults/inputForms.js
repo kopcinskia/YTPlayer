@@ -3,6 +3,12 @@ import PropTypes from 'prop-types'
 import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap'
 
 
+const checkValidate = (validationProp) => {
+  if(validationProp) {
+    return 'error'
+  }
+}
+
 const InputForms = ({ id, validationProp, onChange, label, type, placeholder, helper, inputRef, onBlur }) => {
 
   //TODO walidacja (w mamęcie pojawienia sie klasy walidacji pokazuj wiadomosc)
@@ -12,7 +18,7 @@ const InputForms = ({ id, validationProp, onChange, label, type, placeholder, he
   return (
     <FormGroup
       controlId={id}
-      validationState={validationProp}
+      validationState={checkValidate(validationProp)}
     >
       <ControlLabel>{label}</ControlLabel>
       <FormControl
@@ -25,6 +31,7 @@ const InputForms = ({ id, validationProp, onChange, label, type, placeholder, he
 
       <FormControl.Feedback />
       <HelpBlock>{helper}</HelpBlock>
+      <HelpBlock>{validationProp}</HelpBlock>
     </FormGroup>
   );
 }

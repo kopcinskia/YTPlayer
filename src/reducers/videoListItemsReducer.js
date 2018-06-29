@@ -1,7 +1,7 @@
 const videoListItemsReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_LIST_ITEM':
-      console.log(action.title, 'Title')
+      console.log('REDUCER POSZEDŁ !!!!!!')
       return [
         ...state,
         {
