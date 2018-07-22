@@ -32,7 +32,7 @@ const store = createStore(
 
 store.subscribe(() => {
   seveState({
-    favourites: store.getState().favourites,
+    videoListItems: store.getState().videoListItems,
     currentVideo: store.getState().currentVideo,
   });
 });

@@ -1,6 +1,7 @@
 const videoListItemsReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TO_FAVOURITE':
+
       return [
         ...state,
         {
@@ -13,10 +14,13 @@ const videoListItemsReducer = (state = [], action) => {
         }
 
       ];
+
     case 'DELETE_FROM_FAVOURITE':
-      return state.filter(id => id !== action.id);
+
+      return state.filter(({ id }) => id !== action.id);
 
     case 'TOGGLE_ITEM_LIST':
+
       return state.map(itemList =>
         (itemList.id === action.id)
           ? {...itemList, selected: true}

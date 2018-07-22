@@ -6,7 +6,7 @@ import { ListGroup, ListGroupItem, Button } from 'react-bootstrap'
 
 // zmień onClick na bardziej rozgarnięty
 
-const DefaultList = ({ defaultList, toggleListItem, getCurrentItem, bsStyle, btFunc}) => {
+const DefaultList = ({ defaultList, toggleListItem, getCurrentItem, bsStyle, btFuncAdd, btFuncDel}) => {
   return (
     <ListGroup>
 
@@ -16,11 +16,15 @@ const DefaultList = ({ defaultList, toggleListItem, getCurrentItem, bsStyle, btF
             {...defaultListItem}
             onClick={() => {toggleListItem(defaultListItem.id); getCurrentItem(defaultListItem.title, defaultListItem.link)}}
           />
-          <Button bsSize='large' onClick={() => {btFunc(defaultListItem.title, defaultListItem.link, defaultListItem.thumbnails, defaultListItem.description)}}
-                  bsStyle={bsStyle}
-          >
-              {bsStyle === 'success'? '+' : '-'}
-          </Button>
+          {bsStyle === 'success'?
+            <Button bsSize='large' onClick={() => {btFuncAdd(defaultListItem.title, defaultListItem.link, defaultListItem.thumbnails, defaultListItem.description)}}
+                    bsStyle={bsStyle}
+            >+</Button>
+          :
+            <Button bsSize='large' onClick={() => {btFuncDel(defaultListItem.id)}}
+                    bsStyle={bsStyle}
+            >-</Button>
+          }
         </ListGroupItem>
       )}
     </ListGroup>
@@ -35,7 +39,8 @@ DefaultList.propTypes = {
   toggleListItem: PropTypes.func.isRequired,
   getCurrentItem: PropTypes.func.isRequired,
   bsStyle: PropTypes.string,
-  btFunc: PropTypes.func,
+  btFuncAdd: PropTypes.func,
+  btFuncDel: PropTypes.func,
 };
 
 export default DefaultList;

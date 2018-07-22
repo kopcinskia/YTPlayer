@@ -20,7 +20,7 @@ const SearchVideos = ({ createSearchingList, searchingList, toggleListItem, getC
       />
       <DefaultList
         defaultList={searchingList} toggleListItem={toggleListItem} getCurrentItem={getCurrentItem}
-        bsStyle={'success'} btFunc={addToFavourite}
+        bsStyle={'success'} btFuncAdd={addToFavourite}
       />
     </div>
   )

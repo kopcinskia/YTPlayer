@@ -10,7 +10,7 @@ export const addToFavourite = (title, link, thumbnails, description) => ({
 });
 
 export const deleteFromFavourite = (id) => ({
-    type: 'ADD_TO_FAVOURITE',
+    type: 'DELETE_FROM_FAVOURITE',
     id,
 });
 
