@@ -1,15 +1,22 @@
 import { v4 } from 'node-uuid'
 
-export const addListItem = (title, link) => ({
-  type: 'ADD_LIST_ITEM',
+export const addToFavourite = (title, link, thumbnails, description) => ({
+  type: 'ADD_TO_FAVOURITE',
   id: v4().toString(),
   title,
   link,
+  thumbnails,
+  description
+});
+
+export const deleteFromFavourite = (id) => ({
+    type: 'ADD_TO_FAVOURITE',
+    id,
 });
 
 export const toggleListItem = id => ({
   type: 'TOGGLE_ITEM_LIST',
-  id
+  id,
 });
 
 export const getCurrentItem = (title, link) => ({

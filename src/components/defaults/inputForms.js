@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap'
 
 
-const InputForms = ({ id, validationProp, onChange, label, type, placeholder, helper, inputRef, onBlur }) => {
+const InputForms = ({ id, onChange, label, type, placeholder, helper, inputRef, onBlur }) => {
 
   //TODO walidacja (w mamęcie pojawienia sie klasy walidacji pokazuj wiadomosc)
   //TODO dodaj komponet ValidationMessage
@@ -12,7 +12,6 @@ const InputForms = ({ id, validationProp, onChange, label, type, placeholder, he
   return (
     <FormGroup
       controlId={id}
-      validationState={validationProp}
     >
       <ControlLabel>{label}</ControlLabel>
       <FormControl
@@ -36,7 +35,6 @@ InputForms.propTypes = {
   helper: PropTypes.string,
   type: PropTypes.string,
   inputRef: PropTypes.func,
-  validationProp: PropTypes.string,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
 

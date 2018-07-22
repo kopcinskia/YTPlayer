@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button, Grid, Row, Col } from 'react-bootstrap'
 import search from 'youtube-search'
-import validator from 'validator';
 
 import InputForms from '../defaults/inputForms'
 
@@ -36,7 +35,7 @@ class SearchInput extends Component {
   onSubmit(e){
     e.preventDefault()
 
-    if (!validator.isEmpty(this.state.searchInput)) {
+    if (this.state.searchInput.trim()) {
       const searchingAction = this.props.createSearchingList
       search(this.state.searchInput, this.opts, function (err, results) {
         if (err) return console.error(err, 'Search list ERR!!');
@@ -60,6 +59,7 @@ class SearchInput extends Component {
                 placeholder='Enter text'
                 label='Search Video: '
                 type='text'
+
               />
             </Col>
             <Col xs={2} xsOffset={5}>

@@ -12,7 +12,7 @@ import DefaultList from '../defaults/defaultList'
 // background
 // widoczne obrycowania itemków i klase active na klikany itemek
 
-const SearchVideos = ({ createSearchingList, searchingList, toggleListItem, getCurrentItem }) => {
+const SearchVideos = ({ createSearchingList, searchingList, toggleListItem, getCurrentItem, addToFavourite }) => {
   return (
     <div>
       <SearchingInput
@@ -20,6 +20,7 @@ const SearchVideos = ({ createSearchingList, searchingList, toggleListItem, getC
       />
       <DefaultList
         defaultList={searchingList} toggleListItem={toggleListItem} getCurrentItem={getCurrentItem}
+        bsStyle={'success'} btFunc={addToFavourite}
       />
     </div>
   )
@@ -28,6 +29,7 @@ const SearchVideos = ({ createSearchingList, searchingList, toggleListItem, getC
 SearchVideos.propTypes = {
   searchingList: PropTypes.arrayOf(PropTypes.shape({
   })),
+  addToFavourite :PropTypes.func,
   createSearchingList: PropTypes.func,
   toggleListItem: PropTypes.func.isRequired,
   getCurrentItem: PropTypes.func.isRequired,
