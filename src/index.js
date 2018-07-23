@@ -38,7 +38,7 @@ store.subscribe(() => {
 });
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={store} className="yt-player-component-tree">
     <App />
   </Provider>,
   document.getElementById('root')

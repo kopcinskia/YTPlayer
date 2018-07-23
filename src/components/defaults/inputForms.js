@@ -10,9 +10,7 @@ const InputForms = ({ id, onChange, label, type, placeholder, helper, inputRef, 
   //TODO dodaj tooltip
 
   return (
-    <FormGroup
-      controlId={id}
-    >
+    <FormGroup controlId={id} className="defaults-input-form">
       <ControlLabel>{label}</ControlLabel>
       <FormControl
         type={type}

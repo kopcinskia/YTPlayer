@@ -9,7 +9,7 @@ const ListItem = ({ onClick, link, title, description, thumbnails, selected }) =
         textDecoration: selected ? 'underline' : 'none'
     }}
 >
-  <Media>
+  <Media className="defaults-list-item">
     <Media.Body>
       <Media.Heading>{title}</Media.Heading>
       <p>

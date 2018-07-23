@@ -14,7 +14,7 @@ import DefaultList from '../defaults/defaultList'
 
 const SearchVideos = ({ createSearchingList, searchingList, toggleListItem, getCurrentItem, addToFavourite }) => {
   return (
-    <div>
+    <div className="searching-video-tab">
       <SearchingInput
         createSearchingList={createSearchingList}
       />

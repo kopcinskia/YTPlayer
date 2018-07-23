@@ -7,7 +7,7 @@ import SearchVideos from '../containers/searchVideoContainer'
 const ListTabs = () => {
 
     return (
-      <Tabs defaultActiveKey={1} animation={false} id="noanim-tab-example">
+      <Tabs defaultActiveKey={1} animation={false} id="noanim-tab-example" className="list-tabs">
         <Tab eventKey={1} title="Tab 1">
           <FavouriteVideoList />
         </Tab>

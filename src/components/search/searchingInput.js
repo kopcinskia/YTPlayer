@@ -48,7 +48,7 @@ class SearchInput extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className="searching-input">
         <Grid>
           <Row>
             <Col sm={12} md={8}>

@@ -5,7 +5,7 @@ import { Grid } from 'react-bootstrap'
 
 //TODO kontrolki i opcje do playera np wyciemniane (MODAL)
 const Player = ({currentVideo}) => (
-  <Grid>
+  <Grid className="yt-player">
     <ReactPlayer
       url={currentVideo.link}
       controls

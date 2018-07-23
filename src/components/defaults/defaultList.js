@@ -8,7 +8,7 @@ import { ListGroup, ListGroupItem, Button } from 'react-bootstrap'
 
 const DefaultList = ({ defaultList, toggleListItem, getCurrentItem, bsStyle, btFuncAdd, btFuncDel}) => {
   return (
-    <ListGroup>
+    <ListGroup className="defaults-list">
 
       {defaultList.map(defaultListItem =>
         <ListGroupItem key={defaultListItem.id}>
