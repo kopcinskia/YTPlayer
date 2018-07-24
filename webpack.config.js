@@ -40,8 +40,8 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/, use: ['style-loader', 'css-loader'],
-                include: /flexboxgrid/
+                test: /\.scss$/, use: ['style-loader', 'css-loader', "sass-loader"],
+                include: path.join(__dirname, './src')
                 //Follow instructions at https://github.com/roylee0704/react-flexbox-grid
             },
             {
@@ -52,7 +52,7 @@ module.exports = {
                 test: /\.jsx?$/,
                 loader: "babel-loader",
                 query: {
-                    presets: ["es2015", "react"]
+                    presets: ["es2015", "react", "stage-2"]
                 }
             }]
     },
