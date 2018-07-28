@@ -1,26 +1,3 @@
 li {
-    margin: 1em;
-
-}
-
-.yt-player-component-tree {}
-
-    .container-fluid {}
-
-        .list-tabs {}
-
-            .searching-video-tab {}
-
-                .searching-input {}
-
-            .favourites-video-tab {}
-
-        .yt-player {}
-
-
-
-.defaults-list {}
-
-    .defaults-list-item {}
-
-.defaults-input-form {}
+  margin: 1em;
+  background-color: black; }
