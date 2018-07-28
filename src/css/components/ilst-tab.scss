@@ -1,0 +1,20 @@
+@import "../mixins/mixins.scss";
+@import "../mixins/yt-colors.scss";
+@import "../mixins/buttons.scss";
+
+.tabs {
+  margin-top: 3em;
+}
+
+.tab {
+  height: 30em;
+  overflow-y: scroll;
+  li {
+    margin-top: 1em;
+    padding: 1em;
+  }
+}
+
+
+
+

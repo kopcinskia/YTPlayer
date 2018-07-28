@@ -1,0 +1,14 @@
+@import "../mixins/mixins.scss";
+@import "../mixins/yt-colors.scss";
+@import "../mixins/buttons.scss";
+
+.container-fluid {
+  background-color: $page_color;
+
+  .show-grid {
+    margin-top: 3em;
+
+  }
+
+}
+

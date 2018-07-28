@@ -1,0 +1,27 @@
+.container-fluid {
+  background-color: white; }
+  .container-fluid .show-grid {
+    margin-top: 3em; }
+
+.tabs {
+  margin-top: 3em; }
+
+.tab {
+  height: 30em;
+  overflow-y: scroll; }
+  .tab li {
+    margin-top: 1em;
+    padding: 1em; }
+
+.yt-grid {
+  margin: 1em;
+  padding: 1em;
+  display: inline-table; }
+
+.yt-player {
+  height: 250px;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; }

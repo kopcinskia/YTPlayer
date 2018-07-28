@@ -1,0 +1,17 @@
+@import "../mixins/mixins.scss";
+@import "../mixins/yt-colors.scss";
+@import "../mixins/buttons.scss";
+
+.yt-grid {
+  @include margin-padding(1em, 1em);
+  display: inline-table;
+}
+.yt-player {
+  height: 250px;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+

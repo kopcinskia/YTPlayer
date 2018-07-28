@@ -9,12 +9,13 @@ const App = () => {
   return(
     <Grid className='container-fluid'>
       <Row className='show-grid'>
-        <Col sm={12} md={6}>
-          <ListTabs />
-        </Col>
-        <Col sm={12} md={6}>
+        <Col sm={12} lg={6}>
           <Player />
         </Col>
+        <Col sm={12} lg={6}>
+          <ListTabs className="list-tabs"/>
+        </Col>
+
       </Row>
     </Grid>
   );

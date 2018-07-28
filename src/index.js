@@ -12,7 +12,7 @@ import initialState, { seveState } from './initialState'
 
 import 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './main.css'
+import './css/main.css'
 
 //TODO
 // + pre processor SASS
